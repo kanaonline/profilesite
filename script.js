@@ -1,22 +1,22 @@
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  loop: true,
+const targetElement = document.querySelector(".header_txt");
 
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+texts = targetElement.textContent;
+let textsArray = [];
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
+targetElement.textContent = "";
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+texts.split("");
+let count = 0;
 
+texts.split("").forEach(text => {
+  if(text === " "){
+    textsArray.push(" ");
+  }else{
+    textsArray.push('<span><span style="animation-delay:'+ ((count * 0.2))  + 's;">' + text + '</span></span>');
+    count ++;
+  };
 });
+
+newText = textsArray.join('');
+targetElement.innerHTML = newText;
+
