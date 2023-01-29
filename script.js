@@ -27,7 +27,7 @@ texts.split("").forEach(text => {
   if(text === " "){
     textsArray.push(" ");
   }else{
-    textsArray.push('<span><span style="animation-delay:'+ ((count * 0.2))  + 's;">' + text + '</span></span>');
+    textsArray.push('<span><span style="animation-delay:'+ ((count * 0.3))  + 's;">' + text + '</span></span>');
     count ++;
   };
 });
