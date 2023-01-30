@@ -1,12 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
-  color: #333;
+  color: #777;
   line-height: 1.6;
-  font-family: "Dosis", sans-serif;
+  font-family: "Sawarabi Mincho", sans-serif;
   overflow: visible;
 }
 
@@ -39,6 +40,19 @@ img {
   margin: 0 auto;
 }
 
+.title {
+  font-size: 3.6rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.sub_title {
+  font-size: 2.4rem;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
 /***************************************************
 
 
@@ -63,6 +77,7 @@ header .header_open .header_txt {
   transform: translate(-50%, -50%);
   color: #fff;
   font-size: 9rem;
+  font-family: "Dosis", sans-serif;
   letter-spacing: 0.1em;
   white-space: nowrap;
 }
@@ -115,33 +130,37 @@ header .header_open .header_circle {
   visibility: hidden;
   opacity: 0;
   transition: 0.5s;
+  z-index: 20;
 }
 header .header_open .header_circle.show {
   visibility: visible;
   opacity: 1;
 }
 header .header_top {
-  height: 100px;
-  margin: 0 atuo;
   position: fixed;
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  z-index: 10;
+}
+header .header_top .blContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
 }
-header .header_top .header_top_logo {
+header .header_top .blContainer .header_top_logo {
   width: 100px;
   height: 100px;
   transition: 0.5s;
 }
-header .header_top .header_top_logo a {
+header .header_top .blContainer .header_top_logo a {
   display: inline-block;
   width: 100%;
   height: 100%;
+  transition: 0.5s;
 }
-header .header_top .header_top_logo a:hover {
+header .header_top .blContainer .header_top_logo a:hover {
   transform: translateY(-2px) scale(1.1);
   opacity: 0.7;
 }
@@ -173,8 +192,15 @@ header .header_top .header_top_menu_list li a:hover {
 *****************************************************/
 main {
   position: relative;
-  padding-top: 100px;
-  height: 500px;
+  height: 1000px;
+}
+main .main_backimg {
+  height: 100%;
+  background-attachment: fixed;
+  background-image: url("../img/main_backimg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
 }
 main .main_circle {
   position: absolute;
@@ -184,7 +210,7 @@ main .main_circle {
   background-image: linear-gradient(155deg, rgb(253, 202, 214), rgb(211, 209, 251));
   border-radius: 50%;
   opacity: 0;
-  z-index: 3;
+  z-index: 20;
 }
 main .main_circle.show {
   -webkit-animation: showmaincircle ease 5s forwards;
@@ -219,5 +245,62 @@ main .main_circle.show {
     transform: scale(1);
     opacity: 0;
   }
+}
+main .work {
+  padding-top: 100px;
+}
+main .work .title {
+  margin-top: 100px;
+}
+main .work .work_list {
+  margin-top: 100px;
+  position: relative;
+}
+main .work .work_list .work_list_items .work_list_item a {
+  position: absolute;
+  display: inline-block;
+  border: 1px solid #ccc;
+  top: 80px;
+  right: 15%;
+  transform: rotate(-10deg);
+  padding: 10px;
+  width: 40%;
+  height: 250px;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
+}
+main .work .work_list .work_list_items .work_list_item a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .work .work_list .work_list_items .work_list_item.item1:hover img {
+  opacity: 0;
+}
+main .work .work_list .work_list_items .work_list_item.item1 img {
+  transition: 1s;
+}
+main .work .work_list .work_list_items .work_list_item.item2 a {
+  top: 60px;
+  right: 10%;
+  transform: rotate(10deg);
+  z-index: 2;
+}
+main .work .work_list .work_list_box {
+  position: absolute;
+  width: 450px;
+  height: 300px;
+  top: 30px;
+  right: 10%;
+  transform: rotate(15deg);
+  background-color: rgba(255, 182, 193, 0.4);
+  box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
+}
+main .work .work_list .work_list_box.list2 {
+  top: 10px;
+  right: 12%;
+  transform: rotate(-15deg);
+  background-color: rgba(216, 191, 216, 0.7);
+  box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
 }
 /*# sourceMappingURL=style.css.map */
