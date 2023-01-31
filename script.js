@@ -9,7 +9,7 @@ window.addEventListener('load',function(){
   body.classList.add("inactive");
   setTimeout(function() {
     body.classList.remove("inactive");
-  },8000);
+  },9000);
 });
 
 const header_open = document.querySelector(".header_open");
@@ -44,7 +44,8 @@ header_txt.innerHTML = newText;
 let header_circle = document.querySelector(".header_circle");
 let scale_count = 0;
 const main_open = document.querySelector('.main_open');
-const main_circle = document.querySelector('.main_circle');
+const main_circle1 = document.querySelector('.main_circle1');
+const main_circle2 = document.querySelector('.main_circle2');
 
 window.addEventListener('scroll', () => {
   scale_count ++;
@@ -62,15 +63,15 @@ window.addEventListener('scroll', () => {
   if(scale_count === 25){
     window.addEventListener('scroll', () => {
       header_circle.style.transform = "scale(30,30)";
-      main_circle.classList.add('show');
+      main_circle1.classList.add('show');
+      main_circle2.classList.add('show');
     })
   }
   if(scale_count === 50){
     window.addEventListener('scroll', () => {
-      header_circle.style.transform = "scale(40,40)";
+      header_circle.style.transform = "scale(45,45)";
       header_open.classList.add('inactive');
       header_circle.classList.remove('show');
-      
     })
   }
 });
@@ -80,13 +81,16 @@ window.addEventListener('scroll', () => {
  スクロールで表示
 
 ****************************************/
-// const targetElements = document.querySelectorAll(".animationTarget");
+const main_lists = document.querySelector(".main_lists");
 
-// document.addEventListener("scroll", () => {
-//   targetElements.forEach( targetElement => {
-//     const getElementDistance = targetElement.getBoundingClientRect().top + targetElement.clientHeight * 0.6;
-//     if(window.innerHeight > getElementDistance) {
-//       targetElement.classList.add("show");
-//     }
-//   });
-// });
+document.addEventListener("scroll", () => {
+  const getElementDistance = main_lists.getBoundingClientRect().top;
+  if(window.innerHeight > getElementDistance) {
+    main_lists.classList.add("show");
+  }
+});
+
+// 自動でスクロール
+// document.querySelector("#bottompage").addEventListener("click", () => {
+//   window.scrollTo(0, document.body.scrollHeight);
+//  })
