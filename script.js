@@ -5,15 +5,17 @@
 ****************************************/
 // setTimeout設定
 const body = document.querySelector(".body");
+const header_scroll = document.querySelector(".header_scroll");
 window.addEventListener('load',function(){
   body.classList.add("inactive");
   setTimeout(function() {
     body.classList.remove("inactive");
+    header_scroll.classList.add("show");
   },9000);
 });
 
-const header_open = document.querySelector(".header_open");
-const header_txt = document.querySelector(".header_txt");
+// const header_open = document.querySelector(".header_open");
+const header_txt = document.querySelector(".header_txt h1");
 
 texts = header_txt.textContent;
 let textsArray = [];
@@ -38,57 +40,17 @@ header_txt.innerHTML = newText;
 
 /***************************************
 
- header circle show
-
-****************************************/
-let header_circle = document.querySelector(".header_circle");
-let scale_count = 0;
-const main_open = document.querySelector('.main_open');
-const main_circle1 = document.querySelector('.main_circle1');
-const main_circle2 = document.querySelector('.main_circle2');
-
-window.addEventListener('scroll', () => {
-  scale_count ++;
-  if(scale_count === 5) {
-    header_circle.classList.add('show');
-    header_circle.style.transform = "scale(10,10)";
-    scale_count ++; 
-  }
-  if(scale_count === 15){
-    window.addEventListener('scroll', () => {
-      header_circle.style.transform = "scale(20,20)";
-      
-    })
-  }
-  if(scale_count === 25){
-    window.addEventListener('scroll', () => {
-      header_circle.style.transform = "scale(30,30)";
-      main_circle1.classList.add('show');
-      main_circle2.classList.add('show');
-    })
-  }
-  if(scale_count === 50){
-    window.addEventListener('scroll', () => {
-      header_circle.style.transform = "scale(45,45)";
-      header_open.classList.add('inactive');
-      header_circle.classList.remove('show');
-    })
-  }
-});
-
-/***************************************
-
  スクロールで表示
 
 ****************************************/
-const main_lists = document.querySelector(".main_lists");
+// const main_circle3 = document.querySelector(".main_circle3");
 
-document.addEventListener("scroll", () => {
-  const getElementDistance = main_lists.getBoundingClientRect().top;
-  if(window.innerHeight > getElementDistance) {
-    main_lists.classList.add("show");
-  }
-});
+// document.addEventListener("scroll", () => {
+//   const getElementDistance =main_circle3.getBoundingClientRect().top;
+//   if(window.innerHeight > getElementDistance) {
+//     main_circle3.classList.add("show");
+//   }
+// });
 
 // 自動でスクロール
 // document.querySelector("#bottompage").addEventListener("click", () => {
