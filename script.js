@@ -14,7 +14,6 @@ window.addEventListener('load',function(){
   },9000);
 });
 
-// const header_open = document.querySelector(".header_open");
 const header_txt = document.querySelector(".header_txt h1");
 
 texts = header_txt.textContent;
@@ -40,19 +39,15 @@ header_txt.innerHTML = newText;
 
 /***************************************
 
- スクロールで表示
+ スクロールでtopまで表示
 
 ****************************************/
-// const main_circle3 = document.querySelector(".main_circle3");
+// const main = document.getElementById("main");
+// let offsetTop = window.pageYOffset + main.getBoundingClientRect().top
 
-// document.addEventListener("scroll", () => {
-//   const getElementDistance =main_circle3.getBoundingClientRect().top;
-//   if(window.innerHeight > getElementDistance) {
-//     main_circle3.classList.add("show");
-//   }
+// window.addEventListener("scroll", () => {
+//   window.scrollTo({
+//     top: offsetTop,
+//     behavior: 'smooth'
+//   });
 // });
-
-// 自動でスクロール
-// document.querySelector("#bottompage").addEventListener("click", () => {
-//   window.scrollTo(0, document.body.scrollHeight);
-//  })

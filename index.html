@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/ae4dcd6f2f.js" crossorigin="anonymous"></script>
   <title>Profilesite</title>
-  <link rel="icon" href="/favicon.png" id="favicon">
+  <!-- <link rel="icon" href="/favicon.png" id="favicon"> -->
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
@@ -28,13 +28,15 @@
       </div>
       <a class="header_scroll">scroll down</a>
     </div>
-    <div class="header_top">
-      <div class="blContainer">
-        <div class="header_top_logo">
+  </header>
+  <main id="main" class="main">
+    <div class="blContainer">
+      <div class="main_top">
+        <div class="main_top_logo">
           <a href="#"><img src="img/logo.png" alt=""></a>
         </div>
-        <nav class="header_top_menu">
-          <ul class="header_top_menu_list">
+        <nav class="main_top_menu">
+          <ul class="main_top_menu_list">
             <li><a href="">Work</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
@@ -42,13 +44,15 @@
         </nav>
       </div>
     </div>
-  </header>
-  <main>
     <section class="work blContainer">
       <h1 class="title">Work</h1>
-      <h2 class="sub_title">作品</h2>
       <div class="work_list mmbakery">
-        <h3 class="work_list_title">架空のBakery shop</h3>
+        <div class="work_list_txt">
+          <h3 class="work_list_title">Bakery shop(架空サイト)</h3>
+          <p>
+            Wordpressを使用し、<br>パン屋のホームページを作成。
+          </p>
+        </div>
         <ul class="work_list_items">
           <li class="work_list_item item1">
             <a href="https://kanaonline.site/MM_Bakery/" target="_blank" rel="noopener noreferrer">
@@ -65,10 +69,10 @@
           <div class="work_list_box list2"></div>
       </div>
     </section>
-    <section class="About blContainer">
+    <section class="about blContainer">
       <h1 class="title">About</h1>
     </section>
-    <section class="Contact blContainer">
+    <section class="contact blContainer">
       <h1 class="title">Contact</h1>
     </section>
   </main>
