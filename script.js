@@ -5,13 +5,26 @@
 ****************************************/
 // setTimeout設定
 const body = document.querySelector(".body");
+const getElementDistance = body.getBoundingClientRect().top;
 const header_scroll = document.querySelector(".header_scroll");
+let Count = 0;
+
 window.addEventListener('load',function(){
   body.classList.add("inactive");
-  setTimeout(function() {
-    body.classList.remove("inactive");
+  if(getElementDistance === 0) {
+    Count++;
+  }
+  if(Count === 1) {
+    setTimeout(() => {
     header_scroll.classList.add("show");
-  },9000);
+    body.classList.remove("inactive");
+    }, 9000);
+    Count--;
+  }
+  else {
+    header_scroll.classList.add("show");
+    body.classList.remove("inactive");
+  }
 });
 
 const header_txt = document.querySelector(".header_txt h1");
@@ -36,18 +49,3 @@ texts.split("").forEach(text => {
 newText = textsArray.join('');
 header_txt.innerHTML = newText;
 
-
-/***************************************
-
- スクロールでtopまで表示
-
-****************************************/
-// const main = document.getElementById("main");
-// let offsetTop = window.pageYOffset + main.getBoundingClientRect().top
-
-// window.addEventListener("scroll", () => {
-//   window.scrollTo({
-//     top: offsetTop,
-//     behavior: 'smooth'
-//   });
-// });

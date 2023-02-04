@@ -6,19 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/ae4dcd6f2f.js" crossorigin="anonymous"></script>
   <title>Profilesite</title>
-  <!-- <link rel="icon" href="/favicon.png" id="favicon"> -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" href="img/favicon.ico">
+<link rel="apple-touch-icon" href="img/logo.png" sizes="180x180">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-  <script src="script.js" defer></script>
 </head>
 <body class="body">
-  <header>
+  <header class="header">
     <div class="header_open">
       <div class="header_video_box">
         <video class="header_video" src="img/header_video.mp4" loop autoplay muted  playsinline></video>
@@ -37,43 +31,97 @@
         </div>
         <nav class="main_top_menu">
           <ul class="main_top_menu_list">
-            <li><a href="">Work</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#skill">Skill</a></li>
+            <li><a href="#quality">Quality</a></li>
+            <li><a href="#about">About</a></li>
           </ul>
         </nav>
       </div>
     </div>
-    <section class="work blContainer">
+
+    <!-------------------- section work --------------------------->
+    <section class="work blContainer" id="work">
       <h1 class="title">Work</h1>
-      <div class="work_list mmbakery">
+      <!------------------ パン屋 --------------------------------->
+      <li class="work_list mmbakery">
         <div class="work_list_txt">
-          <h3 class="work_list_title">Bakery shop(架空サイト)</h3>
+          <h3 class="work_list_title">
+            Bakery shop(sample site)
+          </h3>
           <p>
-            Wordpressを使用し、<br>パン屋のホームページを作成。
+            Wordpressを使用し、<br>パン屋のホームページを制作。
           </p>
+          <a class="work_list_link" href="https://kanaonline.site/MM_Bakery/" target="_blank" rel="noopener noreferrer">
+            site open
+          </a>
         </div>
-        <ul class="work_list_items">
-          <li class="work_list_item item1">
-            <a href="https://kanaonline.site/MM_Bakery/" target="_blank" rel="noopener noreferrer">
-              <img class="work_list1" src="img/MM_bakery.png" alt="">
-            </a>
-          </li>
-          <li class="work_list_item item2">
-            <a href="https://kanaonline.site/MM_Bakery/" target="_blank" rel="noopener noreferrer">
-              <img src="img/MM_bakery2.png" alt="">
-            </a>
-          </li>
-        </ul>
-          <div class="work_list_box"></div>
-          <div class="work_list_box list2"></div>
+        <div class="work_items">
+          <ul class="work_list_items">
+            <li class="work_list_item item1">
+              <a href="https://kanaonline.site/MM_Bakery/" target="_blank" rel="noopener noreferrer">
+                <img class="work_list1" src="img/MM_bakery.png" alt="">
+                <div class="work_list_item_txt">site open</div>
+              </a>
+            </li>
+            <li class="work_list_item item2">
+              <a href="https://kanaonline.site/MM_Bakery/" target="_blank" rel="noopener noreferrer">
+                <img src="img/MM_bakery2.png" alt="">
+              </a>
+            </li>
+          </ul>
+            <div class="work_list_box"></div>
+            <div class="work_list_box list2"></div>
+        </div>
+      </li>
+      <!------------------ 英語スクール --------------------------------->
+      <li class="work_list english">
+        <div class="work_list_txt">
+          <h3 class="work_list_title">
+            English School(sample site)
+          </h3>
+          <p>
+            GitHubを使用し、<br>英語スクールのホームページを制作、掲示。
+          </p>
+          <a class="work_list_link" href="https://kanaonline.github.io/AtoZ-Englishshcool/" target="_blank" rel="noopener noreferrer">
+            site open
+          </a>
+        </div>
+        <div class="work_items">
+          <ul class="work_list_items">
+            <li class="work_list_item item1">
+              <a href="https://kanaonline.github.io/AtoZ-Englishshcool/" target="_blank" rel="noopener noreferrer">
+                <img class="work_list1" src="img/AtoZ_Englishshool.png" alt="">
+                <div class="work_list_item_txt">site open ⇀</div>
+              </a>
+            </li>
+            <li class="work_list_item item2">
+              <a href="https://kanaonline.github.io/AtoZ-Englishshcool/" target="_blank" rel="noopener noreferrer">
+                <img src="img/AtoZ_Englishshool2.png" alt="">
+              </a>
+            </li>
+          </ul>
+            <div class="work_list_box"></div>
+            <div class="work_list_box list2"></div>
+        </div>
+      </li>
+    </section>
+
+    <!------------------- section skill --------------------------->
+    <section class="skill" id="skill">
+      <div class="blContainer">
+        <h1 class="title skill_t">Skill</h1>
       </div>
     </section>
-    <section class="about blContainer">
-      <h1 class="title">About</h1>
+
+    <!------------------- section quarity --------------------------->
+    <section class="quality blContainer"  id="quality">
+      <h1 class="title quality_t">Quality</h1>
     </section>
-    <section class="contact blContainer">
-      <h1 class="title">Contact</h1>
+
+    <!------------------- section about --------------------------->
+    <section class="about blContainer"  id="about">
+      <h1 class="title about_t">About</h1>
     </section>
   </main>
 
@@ -81,10 +129,8 @@
 
 
 
-
-
-
-  <!-- ------------ section work ----------------
-      
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  
   </body>
 </html>

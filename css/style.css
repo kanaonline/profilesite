@@ -42,7 +42,7 @@ img {
 
 .title {
   position: relative;
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: bold;
   text-align: start;
 }
@@ -61,9 +61,30 @@ img {
   background: #777;
   width: 850px;
   height: 1px;
-  left: 150px;
+  left: 200px;
   top: 50%;
   display: block;
+}
+.title.skill_t::before {
+  content: "技術";
+}
+.title.skill_t::after {
+  width: 800px;
+  left: 250px;
+}
+.title.quality_t::before {
+  content: "こだわり";
+}
+.title.quality_t::after {
+  width: 800px;
+  left: 250px;
+}
+.title.about_t::before {
+  content: "私について";
+}
+.title.about_t::after {
+  width: 780px;
+  left: 280px;
 }
 
 /***************************************************
@@ -73,6 +94,9 @@ img {
 
 
 *****************************************************/
+header {
+  overflow: auto;
+}
 header .header_open {
   position: relative;
   height: 100vh;
@@ -234,8 +258,17 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  text-align: center;
   height: 10000px;
+  /**************************************************
+
+    section work
+
+  ***************************************************/
+  /**************************************************
+
+    section skill
+
+  ***************************************************/
 }
 main .main_top {
   position: fixed;
@@ -266,7 +299,7 @@ main .main_top_menu_list {
   display: flex;
 }
 main .main_top_menu_list li {
-  width: 100px;
+  width: 125px;
 }
 main .main_top_menu_list li a {
   display: inline-block;
@@ -283,7 +316,7 @@ main .main_top_menu_list li a:hover {
 }
 main .work {
   padding-top: 100px;
-  height: 1000px;
+  margin-bottom: 200px;
 }
 main .work .title {
   margin-top: 200px;
@@ -293,28 +326,75 @@ main .work .work_list {
   display: flex;
   position: relative;
   justify-content: center;
+  font-family: "Noto Serif JP", serif;
+  height: 400px;
+}
+main .work .work_list.english {
+  margin-top: 200px;
+  flex-direction: row-reverse;
+  gap: 50px;
 }
 main .work .work_list .work_list_txt {
   width: 40%;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-left: 20px;
-  text-align: start;
 }
 main .work .work_list .work_list_txt .work_list_title {
   font-size: 2.4rem;
   font-weight: bold;
-  font-family: "Noto Serif JP", serif;
 }
 main .work .work_list .work_list_txt p {
   padding-top: 5px;
   font-size: 1.6rem;
-  font-family: "Noto Serif JP", serif;
 }
-main .work .work_list .work_list_items {
+main .work .work_list .work_list_txt .work_list_link {
+  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0 30px;
+  transition: 0.5s;
+}
+main .work .work_list .work_list_txt .work_list_link::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  right: -35%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #333;
+  transition: 0.5s;
+}
+main .work .work_list .work_list_txt .work_list_link::after {
+  content: "";
+  position: absolute;
+  top: 42%;
+  right: -25%;
+  width: 60px;
+  height: 8px;
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+  transform: skew(45deg);
+  transition: 0.5s;
+}
+main .work .work_list .work_list_txt .work_list_link:hover {
+  transform: translateX(50px);
+}
+main .work .work_list .work_list_txt .work_list_link:hover::before {
+  content: "";
+  width: 170px;
+  transform: scale(1.3);
+}
+main .work .work_list .work_list_txt .work_list_link:hover::after {
+  right: -70%;
+  opacity: 0.7;
+}
+main .work .work_list .work_items {
   position: relative;
   width: 60%;
 }
-main .work .work_list .work_list_items .work_list_item a {
+main .work .work_list .work_items .work_list_items .work_list_item a {
   top: 0;
   left: 15%;
   position: absolute;
@@ -327,23 +407,60 @@ main .work .work_list .work_list_items .work_list_item a {
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
 }
-main .work .work_list .work_list_items .work_list_item a img {
+main .work .work_list .work_items .work_list_items .work_list_item a img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .work .work_list .work_list_items .work_list_item.item1:hover img {
-  opacity: 0;
+main .work .work_list .work_items .work_list_items .work_list_item.item1 {
+  position: relative;
 }
-main .work .work_list .work_list_items .work_list_item.item1 img {
+main .work .work_list .work_items .work_list_items .work_list_item.item1 img {
   transition: 1s;
 }
-main .work .work_list .work_list_items .work_list_item.item2 a {
+main .work .work_list .work_items .work_list_items .work_list_item.item1 .work_list_item_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50px);
+  padding: 10px 20px;
+  background-color: rgba(216, 191, 216, 0.8);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+  width: 150px;
+  height: 50px;
+  font-size: 1.8rem;
+  visibility: hidden;
+  color: #fff;
+  opacity: 0;
+  transition: 1s;
+  border-radius: 50px;
+}
+main .work .work_list .work_items .work_list_items .work_list_item.item1 .work_list_item_txt::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  right: 18%;
+  width: 20px;
+  height: 8px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: skew(45deg);
+  transition: 0.5s;
+}
+main .work .work_list .work_items .work_list_items .work_list_item.item1:hover img {
+  opacity: 0;
+}
+main .work .work_list .work_items .work_list_items .work_list_item.item1:hover .work_list_item_txt {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -30px);
+}
+main .work .work_list .work_items .work_list_items .work_list_item.item2 a {
   top: 70px;
   right: 0%;
   transform: rotate(10deg);
   z-index: 2;
 }
-main .work .work_list .work_list_box {
+main .work .work_list .work_items .work_list_box {
   position: absolute;
   width: 480px;
   height: 350px;
@@ -353,17 +470,14 @@ main .work .work_list .work_list_box {
   background-color: rgba(255, 182, 193, 0.5);
   box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
 }
-main .work .work_list .work_list_box.list2 {
+main .work .work_list .work_items .work_list_box.list2 {
   top: 10px;
   right: 5%;
   transform: rotate(-15deg);
   background-color: rgba(216, 191, 216, 0.8);
   box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
 }
-main .about {
+main .skill {
   height: 1000px;
-}
-main .about h1 {
-  height: 500px;
 }
 /*# sourceMappingURL=style.css.map */
