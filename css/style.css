@@ -38,6 +38,7 @@ img {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .title {
@@ -45,12 +46,13 @@ img {
   font-size: 6rem;
   font-weight: bold;
   text-align: start;
+  padding: 0 20px;
 }
 .title::before {
   content: "作品";
   position: absolute;
-  top: -8px;
-  left: 1%;
+  top: -3px;
+  left: 3%;
   color: #777;
   font-size: 1.2rem;
   display: block;
@@ -59,7 +61,7 @@ img {
   content: "";
   position: absolute;
   background: #777;
-  width: 850px;
+  width: 750px;
   height: 1px;
   left: 200px;
   top: 50%;
@@ -69,22 +71,30 @@ img {
   content: "技術";
 }
 .title.skill_t::after {
+  width: 750px;
+  left: 180px;
+}
+.title.service_t::before {
+  content: "提供";
+}
+.title.service_t::after {
   width: 800px;
   left: 250px;
 }
-.title.quality_t::before {
-  content: "こだわり";
+.title.contact_t::before {
+  content: "お問い合わせ";
 }
-.title.quality_t::after {
-  width: 800px;
-  left: 250px;
-}
-.title.about_t::before {
-  content: "私について";
-}
-.title.about_t::after {
+.title.contact_t::after {
   width: 780px;
   left: 280px;
+}
+
+.title_backimg {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
 }
 
 /***************************************************
@@ -252,13 +262,13 @@ header .header_open .header_scroll::after {
 
 *****************************************************/
 main {
+  width: 100%;
   position: relative;
   background-image: url(../img/main_backimg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 10000px;
   /**************************************************
 
     section work
@@ -267,6 +277,16 @@ main {
   /**************************************************
 
     section skill
+
+  ***************************************************/
+  /**************************************************
+
+    section service
+
+  ***************************************************/
+  /**************************************************
+
+    section contact
 
   ***************************************************/
 }
@@ -317,12 +337,22 @@ main .main_top_menu_list li a:hover {
 main .work {
   padding-top: 100px;
   margin-bottom: 200px;
+  position: relative;
+}
+main .work .title_backimg {
+  position: absolute;
+  top: 16%;
+  left: auto;
+  right: 8.5%;
+  background-image: url("../img/work_backimg.jpg");
+  width: calc(50vw + 50%);
+  height: 180px;
 }
 main .work .title {
   margin-top: 200px;
 }
 main .work .work_list {
-  margin-top: 100px;
+  margin-top: 200px;
   display: flex;
   position: relative;
   justify-content: center;
@@ -478,6 +508,260 @@ main .work .work_list .work_items .work_list_box.list2 {
   box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
 }
 main .skill {
+  position: relative;
   height: 1000px;
+}
+main .skill .title_backimg {
+  position: absolute;
+  top: -5%;
+  right: -22%;
+  left: auto;
+  background-image: url("../img/skill.jpg");
+  width: calc(50vw + 46%);
+  height: 350px;
+}
+main .skill .skill_lists {
+  position: relative;
+  margin-top: 100px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-family: "Noto Serif JP", serif;
+  z-index: 2;
+}
+main .skill .skill_lists .skill_list {
+  position: absolute;
+  padding: 30px;
+  background-color: rgba(255, 182, 193, 0.5);
+  border-radius: 50%;
+  box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.2);
+  -webkit-animation: fluffy1 5s 1s ease-out 2;
+          animation: fluffy1 5s 1s ease-out 2;
+}
+@-webkit-keyframes fluffy1 {
+  0% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fluffy1 {
+  0% {
+    transform: translateY(0);
+  }
+  5% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+main .skill .skill_lists .skill_list:nth-last-of-type(odd) {
+  background-color: rgba(216, 191, 216, 0.8);
+}
+main .skill .skill_lists .skill_list:nth-last-of-type(odd)::before {
+  color: rgb(255, 182, 193);
+}
+main .skill .skill_lists .skill_list::before {
+  content: "01";
+  position: absolute;
+  top: -28%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 70px;
+  text-align: center;
+  font-size: 8rem;
+  color: rgb(216, 191, 216);
+  font-weight: bold;
+  border-radius: 80px/4px;
+}
+main .skill .skill_lists .skill_list::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 8px;
+  box-shadow: 0 40px 15px rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  border-radius: 80px/4px;
+}
+main .skill .skill_lists .skill_list h2 {
+  margin-top: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+main .skill .skill_lists .skill_list p {
+  margin-top: 30px;
+  padding: 0 25px 0 30px;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+main .skill .skill_lists .skill_list.list1 {
+  height: 280px;
+  width: 30%;
+  top: 50%;
+  left: 15%;
+  width: 30%;
+}
+main .skill .skill_lists .skill_list.list2 {
+  height: 280px;
+  width: 30%;
+  top: 50%;
+  left: 55%;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+main .skill .skill_lists .skill_list.list2::before {
+  content: "02";
+}
+main .skill .skill_lists .skill_list.list3 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  height: 330px;
+  width: 35%;
+  top: 400px;
+  left: -5%;
+}
+main .skill .skill_lists .skill_list.list3::before {
+  content: "03";
+  top: -23%;
+}
+main .skill .skill_lists .skill_list.list4 {
+  height: 330px;
+  width: 35%;
+  top: 400px;
+  left: 32%;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+main .skill .skill_lists .skill_list.list4::before {
+  content: "04";
+  top: -23%;
+}
+main .skill .skill_lists .skill_list.list5 {
+  height: 330px;
+  width: 35%;
+  top: 400px;
+  left: 69%;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+main .skill .skill_lists .skill_list.list5::before {
+  content: "05";
+  top: -23%;
+}
+main .service {
+  height: 500px;
+  margin-top: 100px;
+  border: 1px solid rgba(216, 191, 216, 0.8);
+}
+main .contact {
+  height: 1100px;
+  margin-top: 100px;
+}
+main .contact .contact_lists {
+  width: 70%;
+  margin: 50px auto;
+}
+main .contact .contact_lists .contact_list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  font-size: 1.6rem;
+}
+main .contact .contact_lists .contact_list:nth-of-type(1)::after, main .contact .contact_lists .contact_list:nth-of-type(2)::after {
+  position: absolute;
+  content: "※ 必須";
+  top: 7%;
+  left: 5%;
+  color: red;
+  font-size: 7px;
+}
+main .contact .contact_lists .contact_list input {
+  margin-top: 5px;
+  height: 50px;
+  font-size: 1.6rem;
+  padding: 10px;
+}
+main .contact .contact_lists .contact_list textarea {
+  margin-top: 5px;
+  height: 150px;
+  font-size: 1.6rem;
+  padding: 10px;
+  resize: none;
+  width: 100%;
+}
+
+/**************************************************
+
+    footer
+
+  ***************************************************/
+footer {
+  height: 200px;
+  position: relative;
+  background-image: url(../img/footer_backimg.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+footer p {
+  font-size: 1.6rem;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

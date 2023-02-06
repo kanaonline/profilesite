@@ -23,6 +23,8 @@
       <a class="header_scroll">scroll down</a>
     </div>
   </header>
+
+  <!------------------------------ main ----------------------------------->
   <main id="main" class="main">
     <div class="blContainer">
       <div class="main_top">
@@ -33,8 +35,8 @@
           <ul class="main_top_menu_list">
             <li><a href="#work">Work</a></li>
             <li><a href="#skill">Skill</a></li>
-            <li><a href="#quality">Quality</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#quality">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -42,6 +44,7 @@
 
     <!-------------------- section work --------------------------->
     <section class="work blContainer" id="work">
+      <div class="work title_backimg"></div>
       <h1 class="title">Work</h1>
       <!------------------ パン屋 --------------------------------->
       <li class="work_list mmbakery">
@@ -50,7 +53,7 @@
             Bakery shop(sample site)
           </h3>
           <p>
-            Wordpressを使用し、<br>パン屋のホームページを制作。
+            WordPressを使用し、<br>パン屋のホームページを制作。
           </p>
           <a class="work_list_link" href="https://kanaonline.site/MM_Bakery/" target="_blank" rel="noopener noreferrer">
             site open
@@ -108,22 +111,78 @@
     </section>
 
     <!------------------- section skill --------------------------->
-    <section class="skill" id="skill">
-      <div class="blContainer">
-        <h1 class="title skill_t">Skill</h1>
-      </div>
+    <section class="skill blContainer" id="skill">
+      <div class="skill title_backimg"></div>
+      <h1 class="title skill_t">Skill</h1>
+      <ul class="skill_lists">
+        <li class="skill_list list1">
+          <h2>HTML</h2>
+          <p>
+            構造的にマークアップし、SEO対策を考慮した設計を行います。
+          </p>
+        </li>
+        <li class="skill_list list2">
+          <h2>CSS</h2>
+          <p>
+            アニメーション作成、レスポンシブ対応、またSCSSを用いて効率的にコーディングを行います。
+          </p>
+        </li>
+        <li class="skill_list list3">
+          <h2>JavaScript</h2>
+          <p>JavaScriptを用いて様々な機能の実装を行います。<br>
+            (ex)ハンバーガーメニュー、ドロワーメニュー、スライダー、アコーディオン etc..<br>
+            またjQueryを用いての実装も可能です。
+          </p>
+        </li>
+        <li class="skill_list list4">
+          <h2>WordPress</h2>
+          <p>インストールなどの環境構築、既存テーマのカスタマイズ制作や修正を行えます。<br>
+            また、カスタム投稿やカスタムフィールドなどを用いて、オリジナルテーマの制作が可能です。</p>
+        </li>
+        <li class="skill_list list5">
+          <h2>PHP</h2>
+          <p>PHPを用いることで、WordPressの設計を自由に行えますので、
+            お客様のイメージ通りのWebサイトを構築することが可能です。<br>
+            またPHPを用いることにより動的なWebサイト運営を行えます。
+          </p>
+        </li>
+      </ul>
     </section>
 
-    <!------------------- section quarity --------------------------->
-    <section class="quality blContainer"  id="quality">
-      <h1 class="title quality_t">Quality</h1>
+    <!------------------- section service --------------------------->
+    <section class="service blContainer"  id="service">
+      <h1 class="title service_t">Service</h1>
     </section>
 
     <!------------------- section about --------------------------->
-    <section class="about blContainer"  id="about">
-      <h1 class="title about_t">About</h1>
+    <section class="contact blContainer"  id="contact">
+      <h1 class="title contact_t">Contact</h1>
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScM8UIBMMRuGou2g61neCQG__WCpeaCoJRZNRrzb50LL2Iiug/formResponse">
+        <ul class="contact_lists">
+          <li class="contact_list">
+            お名前
+            <input name="entry.2005620554" type="text" required="required" id="textfield" class="g_form" placeholder="お名前">
+          </li>
+          <li class="contact_list">
+            メールアドレス
+            <input name="entry.1045781291" type="text" class="g_form" id="textfield3" placeholder="メールアドレス">
+          </li>
+          <li class="contact_list">
+            お問い合わせ内容
+            <textarea name="entry.839337160" type="text" class="g_form" id="entry.952897594"></textarea>
+          </li>
+          <li class="contact_list">
+          <input type="submit" class="btbt">
+          </li>
+        </ul>
+      </form>
     </section>
   </main>
+
+  <!----------------------------- footer ----------------------------->
+  <footer>
+    <p>aaa</p>
+  </footer>
 
 
 

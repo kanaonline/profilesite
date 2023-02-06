@@ -47,6 +47,7 @@ img {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .title {
@@ -54,11 +55,12 @@ img {
   font-size: 6rem;
   font-weight: bold;
   text-align: start;
+  padding: 0 20px;
   &::before {
     content: "作品";
     position: absolute;
-    top: -8px;
-    left: 1%;
+    top: -3px;
+    left: 3%;
     color: #777;
     font-size: 1.2rem;
     display: block;
@@ -67,7 +69,7 @@ img {
     content: "";
     position: absolute;
     background: #777;
-    width: 850px;
+    width: 750px;
     height: 1px;
     left: 200px;
     top: 50%;
@@ -78,22 +80,22 @@ img {
       content: "技術";
     }
     &::after {
-      width: 800px;
-      left: 250px;
+      width: 750px;
+      left: 180px;
     }
   }
-  &.quality_t {
+  &.service_t {
     &::before {
-      content: "こだわり";
+      content: "提供";
     }
     &::after {
       width: 800px;
       left: 250px;
     }
   }
-  &.about_t {
+  &.contact_t {
     &::before {
-      content: "私について";
+      content: "お問い合わせ";
     }
     &::after {
       width: 780px;
@@ -102,6 +104,13 @@ img {
   }
 }
 
+.title_backimg {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+}
 /***************************************************
 
 
@@ -246,13 +255,13 @@ header {
 
 *****************************************************/
 main {
+  width: 100%;
   position: relative;
   background-image: url(../img/main_backimg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 10000px;//後で削除
   .main_top {
     position: fixed;
     top: 0;
@@ -305,11 +314,21 @@ main {
   .work {
     padding-top: $margin-top;
     margin-bottom: $margin-bottom;
+    position: relative;
+    .title_backimg {
+      position: absolute;
+      top: 16%;
+      left: auto;
+      right: 8.5%;
+      background-image: url('../img/work_backimg.jpg');
+      width: calc(50vw + 50%);
+      height: 180px;
+    }
     .title {
       margin-top: 200px;
     }
     .work_list {
-      margin-top: $margin-top;
+      margin-top: $margin-top + 100px;
       display: flex;
       position: relative;
       justify-content: center;
@@ -478,6 +497,240 @@ main {
 
   ***************************************************/
   .skill {
-    height: 1000px;//後で削除
+    position: relative;
+    height: 1000px;
+    .title_backimg {
+      position: absolute;
+      top: -5%;
+      right: -22%;
+      left: auto;
+      background-image: url('../img/skill.jpg');
+      width: calc(50vw + 46%);
+      height: 350px;
+    } //title_backimg
+    .skill_lists {
+      position: relative;
+      margin-top: $margin-top;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Noto Serif JP', serif;
+      z-index: 2;
+      .skill_list {
+        position: absolute;
+        padding: 30px;
+        background-color: $main-backcolor;
+        border-radius: 50%;
+        box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, .2);
+        animation: fluffy1 5s 1s ease-out 2;
+        @keyframes fluffy1 {
+          0% {
+            transform: translateY(0); }
+          5% {
+            transform: translateY(0); }
+          10% {
+            transform: translateY(0); }
+          20% {
+            transform: translateY(-20px);}
+          25% {
+            transform: translateY(0);}
+          30% {
+            transform: translateY(-20px); }
+          50% {
+            transform: translateY(0); }
+          100% {
+            transform: translateY(0); } }
+        &:nth-last-of-type(odd) {
+          background-color: $sub-backcolor;
+          &::before {
+            color: $main-color;
+          }
+        }
+        &::before {
+          content: "01";
+          position: absolute;
+          top: -28%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 50%;
+          height: 70px;
+          text-align: center;
+          font-size: 8rem;
+          color: $sub-color;
+          font-weight: bold;
+          border-radius: 80px / 4px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 70%;
+          height: 8px;
+          box-shadow: 0 40px 15px rgba(0, 0, 0, .5);
+          background-color: transparent;
+          border-radius: 80px / 4px;
+        }
+        h2 {
+          margin-top: 30px;
+          font-size: 1.8rem;
+          font-weight: bold;
+          text-align: center;
+        }
+        p {
+          margin-top: 30px;
+          padding: 0 25px 0 30px;
+          font-size: 1.4rem;
+          line-height: 1.6;
+        }
+        &.list1 {
+          height: 280px;
+          width: 30%;
+          top: 50%;
+          left: 15%;
+          width: 30%;
+        }
+        &.list2 {
+          height: 280px;
+          width: 30%;
+          top: 50%;
+          left: 55%;
+          animation-delay: 2s;
+          &::before {
+            content: "02";
+          }
+        }
+        &.list3 {
+          animation-delay: 3s;
+          height: 330px;
+          width: 35%;
+          top: 400px;
+          left: -5%;
+          &::before {
+            content: "03";
+            top: -23%;
+          }
+        }
+        &.list4 {
+          height: 330px;
+          width: 35%;
+          top: 400px;
+          left: 32%;
+          animation-delay: 4s;
+          &::before {
+            content: "04";
+            top: -23%;
+          }
+        }
+        &.list5 {
+          height: 330px;
+          width: 35%;
+          top: 400px;
+          left: 69%;
+          animation-delay: 5s;
+          &::before {
+            content: "05";
+            top: -23%;
+          }
+        }
+      } //skill_list
+    } //skill_lists
+  } //.skill
+
+
+  /**************************************************
+
+    section service
+
+  ***************************************************/
+  .service {
+    height: 500px; //後で削除
+    margin-top: $margin-top;
+    border: 1px solid $sub-backcolor;
+  } //service
+
+
+
+
+  /**************************************************
+
+    section contact
+
+  ***************************************************/
+  .contact {
+    height: 1100px;
+    margin-top: $margin-top;
+    .contact_lists {
+      width: 70%;
+      margin: 50px auto;
+      .contact_list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
+        font-size: 1.6rem;
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          &::after {
+            position: absolute;
+            content: '※ 必須';
+            top: 7%;
+            left: 5%;
+            color: red;
+            font-size: 7px;
+          }
+        }
+        input {
+          margin-top: 5px;
+          height: 50px;
+          font-size: 1.6rem;
+          padding: 10px;
+        }
+        textarea {
+          margin-top: 5px;
+          height: 150px;
+          font-size: 1.6rem;
+          padding: 10px;
+          resize: none;
+          width: 100%;
+        }
+      }
+    }
   }
 } //main
+
+/**************************************************
+
+    footer
+
+  ***************************************************/
+  footer {
+    height: 200px;
+    position: relative;
+    background-image: url(../img/footer_backimg.jpg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.3);
+      z-index: -1;
+    }
+    p {
+      
+      font-size: 1.6rem;
+      color: #fff;
+    }
+  }
