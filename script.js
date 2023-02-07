@@ -1,31 +1,41 @@
 /***************************************
 
- header テキストshow
+ ローディング画面表示
+ header_txt,scroll_down表示・表示が終わるまでheader画面固定
 
 ****************************************/
-// setTimeout設定
+const loadingID = document.getElementById("js_loading");
 const body = document.querySelector(".body");
-const getElementDistance = body.getBoundingClientRect().top;
 const header_scroll = document.querySelector(".header_scroll");
-let Count = 0;
 
-window.addEventListener('load',function(){
-  body.classList.add("inactive");
-  if(getElementDistance === 0) {
-    Count++;
-  }
-  if(Count === 1) {
+
+function loadedPage() {
+  loadingID.classList.add("loaded");
+}
+
+if (!sessionStorage.getItem('visited')) {
+  sessionStorage.setItem('visited', 'first');
+  window.addEventListener('load', function () {
+    body.classList.add("inactive");
+    setTimeout(loadedPage, 3000);
     setTimeout(() => {
-    header_scroll.classList.add("show");
-    body.classList.remove("inactive");
-    }, 9000);
-    Count--;
-  }
-  else {
-    header_scroll.classList.add("show");
-    body.classList.remove("inactive");
-  }
-});
+      header_scroll.classList.add("show");
+      body.classList.remove("inactive");
+      }, 13000);
+  });
+  setTimeout(loadedPage, 3000);
+}else {
+  loadedPage();
+  header_scroll.classList.add("show");
+  body.classList.remove("inactive");
+}
+
+
+/***************************************
+
+ header テキスト順々に出力
+
+****************************************/
 
 const header_txt = document.querySelector(".header_txt h1");
 
@@ -46,6 +56,7 @@ texts.split("").forEach(text => {
   };
 });
 
-newText = textsArray.join('');
+setTimeout(() => {
+  newText = textsArray.join('');
 header_txt.innerHTML = newText;
-
+  }, 4000);
