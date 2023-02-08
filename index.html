@@ -7,10 +7,12 @@
   <script src="https://kit.fontawesome.com/ae4dcd6f2f.js" crossorigin="anonymous"></script>
   <title>Profilesite</title>
   <link rel="icon" href="img/favicon.ico">
-<link rel="apple-touch-icon" href="img/logo.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="img/logo.png" sizes="180x180">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="css/style.min.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body class="body">
   <div id="js_loading" class="bl_loading">
     <div class="bl_loadingCircle"></div>
@@ -39,7 +41,7 @@
           <ul class="main_top_menu_list">
             <li><a href="#work">Work</a></li>
             <li><a href="#skill">Skill</a></li>
-            <li><a href="#quality">Service</a></li>
+            <li><a href="#service">Service</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -47,11 +49,11 @@
     </div>
 
     <!-------------------- section work --------------------------->
-    <section class="work blContainer" id="work">
+    <section class="work blContainer scroll_animation" id="work">
       <div class="work title_backimg"></div>
-      <h1 class="title">Work</h1>
+      <h1 class="title scroll_animation">Work</h1>
       <!------------------ パン屋 --------------------------------->
-      <li class="work_list mmbakery">
+      <li class="work_list scroll_animation mmbakery ">
         <div class="work_list_txt">
           <h3 class="work_list_title">
             Bakery shop(sample site)
@@ -82,7 +84,7 @@
         </div>
       </li>
       <!------------------ 英語スクール --------------------------------->
-      <li class="work_list english">
+      <li class="work_list scroll_animation english">
         <div class="work_list_txt">
           <h3 class="work_list_title">
             English School(sample site)
@@ -117,33 +119,33 @@
     <!------------------- section skill --------------------------->
     <section class="skill blContainer" id="skill">
       <div class="skill title_backimg"></div>
-      <h1 class="title skill_t">Skill</h1>
+      <h1 class="title scroll_animation skill_t">Skill</h1>
       <ul class="skill_lists">
-        <li class="skill_list list1">
+        <li class="skill_list list1 scroll_animation">
           <h2>HTML</h2>
           <p>
             構造的にマークアップし、SEO対策を考慮した設計を行います。
           </p>
         </li>
-        <li class="skill_list list2">
+        <li class="skill_list list2 scroll_animation">
           <h2>CSS</h2>
           <p>
             アニメーション作成、レスポンシブ対応、またSCSSを用いて効率的にコーディングを行います。
           </p>
         </li>
-        <li class="skill_list list3">
+        <li class="skill_list list3 scroll_animation">
           <h2>JavaScript</h2>
           <p>JavaScriptを用いて様々な機能の実装を行います。<br>
             (ex)ハンバーガーメニュー、ドロワーメニュー、スライダー、アコーディオン etc..<br>
             またjQueryを用いての実装も可能です。
           </p>
         </li>
-        <li class="skill_list list4">
+        <li class="skill_list list4 scroll_animation">
           <h2>WordPress</h2>
           <p>インストールなどの環境構築、既存テーマのカスタマイズ制作や修正を行えます。<br>
             また、カスタム投稿やカスタムフィールドなどを用いて、オリジナルテーマの制作が可能です。</p>
         </li>
-        <li class="skill_list list5">
+        <li class="skill_list list5 scroll_animation">
           <h2>PHP</h2>
           <p>PHPを用いることで、WordPressの設計を自由に行えますので、
             お客様のイメージ通りのWebサイトを構築することが可能です。<br>
@@ -155,12 +157,26 @@
 
     <!------------------- section service --------------------------->
     <section class="service blContainer"  id="service">
-      <h1 class="title service_t">Service</h1>
+      <h1 class="title scroll_animation service_t">Service</h1>
+      <ul class="service_lists">
+        <li class="service_list">
+          <p>list1</p>
+        </li>
+        <li class="service_list">
+          <p>list2</p>
+        </li>
+        <li class="service_list">
+          <p>list3</p>
+        </li>
+        <li class="service_list">
+          <p>list4</p>
+        </li>
+      </ul>
     </section>
 
     <!------------------- section about --------------------------->
     <section class="contact blContainer"  id="contact">
-      <h1 class="title contact_t">Contact</h1>
+      <h1 class="title scroll_animation contact_t">Contact</h1>
       <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScM8UIBMMRuGou2g61neCQG__WCpeaCoJRZNRrzb50LL2Iiug/formResponse">
         <ul class="contact_lists">
           <li class="contact_list">
@@ -195,8 +211,8 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+
+  
   
   </body>
 </html>

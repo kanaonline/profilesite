@@ -47,6 +47,15 @@ img {
   font-weight: bold;
   text-align: start;
   padding: 0 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: 1s;
+}
+.title.scroll_animation.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
 }
 .title::before {
   content: "作品";
@@ -78,7 +87,7 @@ img {
   content: "提供";
 }
 .title.service_t::after {
-  width: 800px;
+  width: 700px;
   left: 250px;
 }
 .title.contact_t::before {
@@ -400,7 +409,7 @@ main .main_top_menu_list li a:hover {
 }
 main .work {
   padding-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 300px;
   position: relative;
 }
 main .work .title_backimg {
@@ -422,6 +431,15 @@ main .work .work_list {
   justify-content: center;
   font-family: "Noto Serif JP", serif;
   height: 400px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: 1s;
+}
+main .work .work_list.scroll_animation.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
 }
 main .work .work_list.english {
   margin-top: 200px;
@@ -573,7 +591,7 @@ main .work .work_list .work_items .work_list_box.list2 {
 }
 main .skill {
   position: relative;
-  height: 1000px;
+  height: 1100px;
 }
 main .skill .title_backimg {
   position: absolute;
@@ -601,8 +619,37 @@ main .skill .skill_lists .skill_list {
   background-color: rgba(255, 182, 193, 0.5);
   border-radius: 50%;
   box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.2);
-  -webkit-animation: fluffy1 5s 1s ease-out 2;
-          animation: fluffy1 5s 1s ease-out 2;
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+}
+main .skill .skill_lists .skill_list.scroll_animation.show {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  -webkit-animation: fluffy1 6s 3s ease-out 2;
+          animation: fluffy1 6s 3s ease-out 2;
+}
+main .skill .skill_lists .skill_list.scroll_animation.show.list1 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+main .skill .skill_lists .skill_list.scroll_animation.show.list2 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+main .skill .skill_lists .skill_list.scroll_animation.show.list3 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+main .skill .skill_lists .skill_list.scroll_animation.show.list4 {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+main .skill .skill_lists .skill_list.scroll_animation.show.list5 {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }
 @-webkit-keyframes fluffy1 {
   0% {
@@ -712,15 +759,11 @@ main .skill .skill_lists .skill_list.list2 {
   width: 30%;
   top: 50%;
   left: 55%;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
 }
 main .skill .skill_lists .skill_list.list2::before {
   content: "02";
 }
 main .skill .skill_lists .skill_list.list3 {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
   height: 330px;
   width: 35%;
   top: 400px;
@@ -735,8 +778,6 @@ main .skill .skill_lists .skill_list.list4 {
   width: 35%;
   top: 400px;
   left: 32%;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
 }
 main .skill .skill_lists .skill_list.list4::before {
   content: "04";
@@ -747,17 +788,74 @@ main .skill .skill_lists .skill_list.list5 {
   width: 35%;
   top: 400px;
   left: 69%;
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
 }
 main .skill .skill_lists .skill_list.list5::before {
   content: "05";
   top: -23%;
 }
 main .service {
-  height: 500px;
   margin-top: 100px;
-  border: 1px solid rgba(216, 191, 216, 0.8);
+  margin-bottom: 200px;
+  position: relative;
+}
+main .service .service_t {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(500px);
+  transition: 2s;
+}
+main .service .service_t.show {
+  position: fixed;
+  top: 13%;
+  left: 18%;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+main .service .service_lists {
+  position: relative;
+  height: 3000px;
+  width: 100%;
+}
+main .service .service_lists .service_list {
+  position: absolute;
+  top: 20%;
+  left: 11%;
+  width: 77%;
+  font-size: 1.6rem;
+  height: 400px;
+  background: rgb(198, 198, 252);
+  margin-top: 50px;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
+}
+main .service .service_lists .service_list:nth-of-type(2) {
+  top: 1000px;
+  z-index: 10;
+}
+main .service .service_lists .service_list:nth-of-type(3) {
+  top: 1500px;
+  z-index: 20;
+}
+main .service .service_lists .service_list:nth-of-type(4) {
+  top: 2000px;
+  z-index: 30;
+  height: 500px;
+}
+main .service .service_lists .service_list.show {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+main .service .service_lists .service_list.show:nth-of-type(4) {
+  left: 15%;
+  width: 70%;
 }
 main .contact {
   height: 900px;

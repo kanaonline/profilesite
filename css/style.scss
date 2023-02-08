@@ -56,6 +56,15 @@ img {
   font-weight: bold;
   text-align: start;
   padding: 0 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: 1s;
+  &.scroll_animation.show {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
   &::before {
     content: "作品";
     position: absolute;
@@ -89,7 +98,7 @@ img {
       content: "提供";
     }
     &::after {
-      width: 800px;
+      width: 700px;
       left: 250px;
     }
   }
@@ -360,7 +369,7 @@ main {
   ***************************************************/ 
   .work {
     padding-top: $margin-top;
-    margin-bottom: $margin-bottom;
+    margin-bottom: $margin-bottom + 100px;
     position: relative;
     .title_backimg {
       position: absolute;
@@ -370,7 +379,7 @@ main {
       background-image: url('../img/work_backimg.jpg');
       width: calc(50vw + 50%);
       height: 180px;
-    }
+      } //title_backimg
     .title {
       margin-top: 200px;
     }
@@ -381,6 +390,15 @@ main {
       justify-content: center;
       font-family: 'Noto Serif JP', serif;
       height: 400px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(50px);
+      transition: 1s;
+      &.scroll_animation.show {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
       &.english {
         margin-top: 200px;
         flex-direction: row-reverse;
@@ -545,7 +563,7 @@ main {
   ***************************************************/
   .skill {
     position: relative;
-    height: 1000px;
+    height: 1100px;
     .title_backimg {
       position: absolute;
       top: -5%;
@@ -571,7 +589,32 @@ main {
         background-color: $main-backcolor;
         border-radius: 50%;
         box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, .2);
-        animation: fluffy1 5s 1s ease-out 2;
+        transform: translateY(50px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 1s;
+        // animation: fluffy1 2s 1s ease-out 2;
+        &.scroll_animation.show {
+          transform: none;
+          opacity: 1;
+          visibility: visible;
+          animation: fluffy1 6s 3s ease-out 2;
+          &.list1 {
+            animation-delay: 1s;
+          }
+          &.list2 {
+            animation-delay: 2s;
+          }
+          &.list3 {
+            animation-delay: 3s;
+          }
+          &.list4 {
+            animation-delay: 4s;
+          }
+          &.list5 {
+            animation-delay: 5s;
+          }
+        }
         @keyframes fluffy1 {
           0% {
             transform: translateY(0); }
@@ -639,19 +682,18 @@ main {
           top: 50%;
           left: 15%;
           width: 30%;
+          
         }
-        &.list2 {
+        &.list2 { 
           height: 280px;
           width: 30%;
           top: 50%;
           left: 55%;
-          animation-delay: 2s;
           &::before {
             content: "02";
           }
         }
         &.list3 {
-          animation-delay: 3s;
           height: 330px;
           width: 35%;
           top: 400px;
@@ -666,7 +708,6 @@ main {
           width: 35%;
           top: 400px;
           left: 32%;
-          animation-delay: 4s;
           &::before {
             content: "04";
             top: -23%;
@@ -677,7 +718,6 @@ main {
           width: 35%;
           top: 400px;
           left: 69%;
-          animation-delay: 5s;
           &::before {
             content: "05";
             top: -23%;
@@ -694,9 +734,69 @@ main {
 
   ***************************************************/
   .service {
-    height: 500px; //後で削除
     margin-top: $margin-top;
-    border: 1px solid $sub-backcolor;
+    margin-bottom: 200px;
+    position: relative;
+    .service_t {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(500px);
+      transition: 2s;
+      &.show {
+        position: fixed;
+        top: 13%;
+        left: 18%;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+    .service_lists {
+      position: relative;
+      height: 3000px;
+      width: 100%;
+      .service_list {
+        position: absolute;
+        top: 20%;
+        left: 11%;
+        width: 77%;
+        font-size: 1.6rem;
+        height: 400px;
+        background: rgb(198, 198, 252);
+        margin-top: 50px;
+        transform: translateY(100px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 1s;
+        &:nth-of-type(2) {
+          top: 1000px;
+          z-index: 10;
+        }
+        &:nth-of-type(3) {
+          top: 1500px;
+          z-index: 20;
+        }
+        &:nth-of-type(4) {
+          top: 2000px;
+          z-index: 30;
+          height: 500px;
+        }
+        &.show {
+          position: fixed;
+          top: 20%;
+          left: 25%;
+          width: 50%;
+          opacity: 1;
+          transform: translateY(0);
+          visibility: visible;
+          &:nth-of-type(4) {
+            left: 15%;
+            width: 70%;
+          }
+        }
+      }
+    }
+
   } //service
 
 

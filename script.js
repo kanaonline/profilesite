@@ -60,3 +60,52 @@ setTimeout(() => {
   newText = textsArray.join('');
 header_txt.innerHTML = newText;
   }, 4000);
+
+/***************************************
+
+ 　scroll_animation
+
+****************************************/
+const scroll_animations = document.querySelectorAll(".scroll_animation");
+
+document.addEventListener("scroll", () => {
+  scroll_animations.forEach(scroll_animation => {
+    const getElementDistance = scroll_animation.getBoundingClientRect().top + scroll_animation.clientHeight * 0.6;
+    if(window.innerHeight > getElementDistance) {
+      scroll_animation.classList.add("show");
+    }// if(getElementDistance)
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************
+
+ 　service スライダー
+
+****************************************/
+
+
+// const service_title = document.querySelector(".title.service_t");
+// const service_lists = document.querySelectorAll(".service_list");
+
+// document.addEventListener("scroll", () => {
+//   service_lists.forEach( service_list => {
+//     const getElementDistance = service_list.getBoundingClientRect().top + service_list.clientHeight * 0.6;
+//     if(window.innerHeight > getElementDistance) {
+//       service_list.classList.add("show");
+//     }// if(getElementDistance)
+//   });
+// });
+
+
