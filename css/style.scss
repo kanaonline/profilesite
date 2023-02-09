@@ -327,6 +327,10 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: .3s;
+    &.inActive {
+      transform: translateY(-100%);
+    }
     .main_top_logo {
       width: 100px;
       height: 100%;
@@ -393,7 +397,7 @@ main {
       opacity: 0;
       visibility: hidden;
       transform: translateX(-60px);
-      transition: 1s;
+      transition: 2s;
       &:nth-of-type(2) {
         transform: translateX(60px);
       }
@@ -743,7 +747,7 @@ main {
   ***************************************************/
   .service {
     margin-top: $margin-top;
-    margin-bottom: 200px;
+    margin-bottom: $margin-bottom - 50px;
     position: relative;
     .service_t {
       opacity: 0;
@@ -815,12 +819,13 @@ main {
 
   ***************************************************/
   .contact {
-    height: 900px;
-    margin-top: $margin-top;
+    // height: 900px;
+    padding-top: 200px;
+    margin-bottom: $margin-bottom;
     .contact_t {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-200px);
+      transform: translateY(-250px);
       transition: 1.5s;
     }
     .contact_lists {
@@ -829,7 +834,7 @@ main {
       &.scroll_animation {
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-200px);
+        transform: translateY(-250px);
         transition: 2s;
         &.show {
           opacity: 1;

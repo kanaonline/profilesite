@@ -372,6 +372,10 @@ main .main_top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.3s;
+}
+main .main_top.inActive {
+  transform: translateY(-100%);
 }
 main .main_top .main_top_logo {
   width: 100px;
@@ -434,7 +438,7 @@ main .work .work_list {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-60px);
-  transition: 1s;
+  transition: 2s;
 }
 main .work .work_list:nth-of-type(2) {
   transform: translateX(60px);
@@ -803,7 +807,7 @@ main .skill .skill_lists .skill_list.list5::before {
 }
 main .service {
   margin-top: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
   position: relative;
 }
 main .service .service_t {
@@ -869,13 +873,13 @@ main .service .service_lists .service_list.scroll_animation.show.card:nth-of-typ
   top: 70%;
 }
 main .contact {
-  height: 900px;
-  margin-top: 100px;
+  padding-top: 200px;
+  margin-bottom: 200px;
 }
 main .contact .contact_t {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-200px);
+  transform: translateY(-250px);
   transition: 1.5s;
 }
 main .contact .contact_lists {
@@ -885,7 +889,7 @@ main .contact .contact_lists {
 main .contact .contact_lists.scroll_animation {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-200px);
+  transform: translateY(-250px);
   transition: 2s;
 }
 main .contact .contact_lists.scroll_animation.show {

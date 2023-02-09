@@ -67,6 +67,34 @@ header_txt.innerHTML = newText;
   }, 4000);
 
 
+
+/********************************************************
+
+
+ menubar　下：非表示　上：表示
+
+
+************************************?*******************/
+
+let beforeScrollValue = 0;
+
+const header_nemu = document.querySelector('.main_top').classList;
+
+window.addEventListener('scroll',() => {
+  if(window.scrollY > beforeScrollValue){
+    // 下にスクロールした場合の処理
+    header_nemu.add('inActive');
+  }else{
+    // 上にスクロールした場合の処理
+    header_nemu.remove('inActive');
+  }
+  beforeScrollValue = window.scrollY;
+});
+
+
+
+
+
 /********************************************************
 
 
