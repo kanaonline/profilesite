@@ -1,9 +1,12 @@
-/***************************************
+/********************************************************
+
 
  ローディング画面表示
  header_txt,scroll_down表示・表示が終わるまでheader画面固定
 
-****************************************/
+
+*********************************************************/
+
 const loadingID = document.getElementById("js_loading");
 const body = document.querySelector(".body");
 const header_scroll = document.querySelector(".header_scroll");
@@ -31,11 +34,13 @@ if (!sessionStorage.getItem('visited')) {
 }
 
 
-/***************************************
+/********************************************************
+
 
  header テキスト順々に出力
 
-****************************************/
+
+************************************?*******************/
 
 const header_txt = document.querySelector(".header_txt h1");
 
@@ -61,51 +66,37 @@ setTimeout(() => {
 header_txt.innerHTML = newText;
   }, 4000);
 
-/***************************************
+
+/********************************************************
+
 
  　scroll_animation
 
-****************************************/
+
+*********************************************************/
+
 const scroll_animations = document.querySelectorAll(".scroll_animation");
+const service_height = document.querySelector(".service_lists");
+const service_title = document.querySelector(".title.scroll_animation.service_t");
+const service_lists = document.querySelectorAll(".service_list.scroll_animation");
+const cotact_title = document.querySelector(".title.scroll_animation.contact_t");
+
 
 document.addEventListener("scroll", () => {
   scroll_animations.forEach(scroll_animation => {
     const getElementDistance = scroll_animation.getBoundingClientRect().top + scroll_animation.clientHeight * 0.6;
+    // スクロールしたら表示する
     if(window.innerHeight > getElementDistance) {
-      scroll_animation.classList.add("show");
-    }// if(getElementDistance)
-  });
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***************************************
-
- 　service スライダー
-
-****************************************/
-
-
-// const service_title = document.querySelector(".title.service_t");
-// const service_lists = document.querySelectorAll(".service_list");
-
-// document.addEventListener("scroll", () => {
-//   service_lists.forEach( service_list => {
-//     const getElementDistance = service_list.getBoundingClientRect().top + service_list.clientHeight * 0.6;
-//     if(window.innerHeight > getElementDistance) {
-//       service_list.classList.add("show");
-//     }// if(getElementDistance)
-//   });
-// });
-
+      scroll_animation.classList.add("show")
+    } 
+    //　contact_section表示したらservice_section postision変更
+    if(cotact_title.classList.contains("show")) {
+      service_height.style.height = "1600px";
+      service_title.style.position = "static";
+      service_lists.forEach(service_list => {
+        service_list.classList.add("card");
+      }); //forEach service
+    }; //if
+  }); // forEach scroll
+}); // scroll
 
