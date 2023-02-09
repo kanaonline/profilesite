@@ -600,30 +600,34 @@ main {
         opacity: 0;
         transform: scale(0.5);
         visibility: hidden;
-        transition: 2s;
+        transition: 1.5s;
         &.scroll_animation.show {
           transform: none;
           opacity: 1;
           visibility: visible;
-          animation: fluffy1 8s 5s ease-out 2;
+          animation: fluffy1 6s 5s ease-out forwards;
+          &:hover {
+            transform: translateY(-30px);
+            cursor: pointer;
+          }
           &.list1 {
             animation-delay: 1s;
           }
           &.list2 {
-            animation-delay: 2.4s;
+            animation-delay: 3s;
             transition-delay: 0.4s;
           }
           &.list3 {
-            animation-delay: 3.6s;
+            animation-delay: 5s;
             transition-delay: 0.6s;
 
           }
           &.list4 {
-            animation-delay: 4.8s;
+            animation-delay: 7s;
             transition-delay: 0.8s;
           }
           &.list5 {
-            animation-delay: 6s;
+            animation-delay: 9s;
             transition-delay: 1s;
           }
         }
@@ -747,7 +751,7 @@ main {
   ***************************************************/
   .service {
     margin-top: $margin-top;
-    margin-bottom: $margin-bottom - 50px;
+    margin-bottom: $margin-bottom;
     position: relative;
     .service_t {
       opacity: 0;
@@ -773,12 +777,23 @@ main {
         width: 60%;
         font-size: 1.6rem;
         height: 400px;
-        background: rgb(198, 198, 252);
+        padding: 20px;;
+        font-family: 'Noto Serif JP', serif;
         margin-top: 50px;
+        border-radius: 20px;
+        background-color: rgb(252, 243, 244);
         transform: translateY(100px);
         opacity: 0;
         visibility: hidden;
         transition: 1s;
+        &:nth-of-type(2) {
+          background-color: rgb(251, 237, 251);
+        }
+        h2 {
+          text-align: center;
+          padding: 20px;
+          font-size: 3rem;
+        }
         &:nth-of-type(2) {
           top: 1000px;
           z-index: 10;
@@ -819,13 +834,12 @@ main {
 
   ***************************************************/
   .contact {
-    // height: 900px;
-    padding-top: 200px;
+    padding-top: $margin-top;
     margin-bottom: $margin-bottom;
     .contact_t {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-250px);
+      transform: translateY(-280px);
       transition: 1.5s;
     }
     .contact_lists {
@@ -834,7 +848,7 @@ main {
       &.scroll_animation {
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-250px);
+        transform: translateY(100px);
         transition: 2s;
         &.show {
           opacity: 1;

@@ -630,37 +630,41 @@ main .skill .skill_lists .skill_list {
   opacity: 0;
   transform: scale(0.5);
   visibility: hidden;
-  transition: 2s;
+  transition: 1.5s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show {
   transform: none;
   opacity: 1;
   visibility: visible;
-  -webkit-animation: fluffy1 8s 5s ease-out 2;
-          animation: fluffy1 8s 5s ease-out 2;
+  -webkit-animation: fluffy1 6s 5s ease-out forwards;
+          animation: fluffy1 6s 5s ease-out forwards;
+}
+main .skill .skill_lists .skill_list.scroll_animation.show:hover {
+  transform: translateY(-30px);
+  cursor: pointer;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list1 {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list2 {
-  -webkit-animation-delay: 2.4s;
-          animation-delay: 2.4s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
   transition-delay: 0.4s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list3 {
-  -webkit-animation-delay: 3.6s;
-          animation-delay: 3.6s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
   transition-delay: 0.6s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list4 {
-  -webkit-animation-delay: 4.8s;
-          animation-delay: 4.8s;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
   transition-delay: 0.8s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list5 {
-  -webkit-animation-delay: 6s;
-          animation-delay: 6s;
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
   transition-delay: 1s;
 }
 @-webkit-keyframes fluffy1 {
@@ -807,7 +811,7 @@ main .skill .skill_lists .skill_list.list5::before {
 }
 main .service {
   margin-top: 100px;
-  margin-bottom: 150px;
+  margin-bottom: 200px;
   position: relative;
 }
 main .service .service_t {
@@ -835,12 +839,23 @@ main .service .service_lists .service_list {
   width: 60%;
   font-size: 1.6rem;
   height: 400px;
-  background: rgb(198, 198, 252);
+  padding: 20px;
+  font-family: "Noto Serif JP", serif;
   margin-top: 50px;
+  border-radius: 20px;
+  background-color: rgb(252, 243, 244);
   transform: translateY(100px);
   opacity: 0;
   visibility: hidden;
   transition: 1s;
+}
+main .service .service_lists .service_list:nth-of-type(2) {
+  background-color: rgb(251, 237, 251);
+}
+main .service .service_lists .service_list h2 {
+  text-align: center;
+  padding: 20px;
+  font-size: 3rem;
 }
 main .service .service_lists .service_list:nth-of-type(2) {
   top: 1000px;
@@ -873,13 +888,13 @@ main .service .service_lists .service_list.scroll_animation.show.card:nth-of-typ
   top: 70%;
 }
 main .contact {
-  padding-top: 200px;
+  padding-top: 100px;
   margin-bottom: 200px;
 }
 main .contact .contact_t {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-250px);
+  transform: translateY(-280px);
   transition: 1.5s;
 }
 main .contact .contact_lists {
@@ -889,7 +904,7 @@ main .contact .contact_lists {
 main .contact .contact_lists.scroll_animation {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-250px);
+  transform: translateY(100px);
   transition: 2s;
 }
 main .contact .contact_lists.scroll_animation.show {
