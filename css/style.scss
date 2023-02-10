@@ -318,12 +318,13 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding-top: $margin-top;
   .main_top {
     position: fixed;
     top: 0;
     width: 1000px;
     height: 100px;
-    z-index: 10;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -372,12 +373,11 @@ main {
 
   ***************************************************/ 
   .work {
-    padding-top: $margin-top;
     margin-bottom: $margin-bottom + 100px;
     position: relative;
     .title_backimg {
       position: absolute;
-      top: 16%;
+      top: -3.5%;
       left: auto;
       right: 8.5%;
       background-image: url('../img/work_backimg.jpg');
@@ -614,20 +614,20 @@ main {
             animation-delay: 1s;
           }
           &.list2 {
-            animation-delay: 3s;
+            animation-delay: 2.5s;
             transition-delay: 0.4s;
           }
           &.list3 {
-            animation-delay: 5s;
+            animation-delay: 4.5s;
             transition-delay: 0.6s;
 
           }
           &.list4 {
-            animation-delay: 7s;
+            animation-delay: 6.5s;
             transition-delay: 0.8s;
           }
           &.list5 {
-            animation-delay: 9s;
+            animation-delay: 8.5s;
             transition-delay: 1s;
           }
         }
@@ -777,26 +777,52 @@ main {
         width: 60%;
         font-size: 1.6rem;
         height: 400px;
-        padding: 20px;;
+        padding: 20px;
         font-family: 'Noto Serif JP', serif;
         margin-top: 50px;
         border-radius: 20px;
-        background-color: rgb(252, 243, 244);
+        background-color: rgb(249, 234, 236);
+        box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
         transform: translateY(100px);
         opacity: 0;
         visibility: hidden;
         transition: 1s;
-        &:nth-of-type(2) {
-          background-color: rgb(251, 237, 251);
+        &:nth-of-type(2) .service_cotent {
+          flex-direction: row-reverse;
         }
         h2 {
           text-align: center;
-          padding: 20px;
+          padding: 20px 20px 10px;
           font-size: 3rem;
+          font-weight: bold;
+        }
+        .service_cotent {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          padding: 20px;
+          height: 80%;
+          .service_cotent_img {
+            width: 45%;
+            img {
+              display: block;
+              object-fit: cover;
+              box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+              border-radius: 10px;
+            }
+          }
+          .service_cotent_txt {
+            width: 55%;
+            p {
+              line-height: 1.8;
+            }
+          }
         }
         &:nth-of-type(2) {
           top: 1000px;
           z-index: 10;
+          background-color: rgb(251, 237, 251);
         }
         &:nth-of-type(3) {
           top: 1500px;

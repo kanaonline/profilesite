@@ -337,6 +337,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding-top: 100px;
   /**************************************************
 
     section work
@@ -368,7 +369,7 @@ main .main_top {
   top: 0;
   width: 1000px;
   height: 100px;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -412,13 +413,12 @@ main .main_top_menu_list li a:hover {
   opacity: 0.7;
 }
 main .work {
-  padding-top: 100px;
   margin-bottom: 300px;
   position: relative;
 }
 main .work .title_backimg {
   position: absolute;
-  top: 16%;
+  top: -3.5%;
   left: auto;
   right: 8.5%;
   background-image: url("../img/work_backimg.jpg");
@@ -648,23 +648,23 @@ main .skill .skill_lists .skill_list.scroll_animation.show.list1 {
           animation-delay: 1s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list2 {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
   transition-delay: 0.4s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list3 {
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  -webkit-animation-delay: 4.5s;
+          animation-delay: 4.5s;
   transition-delay: 0.6s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list4 {
-  -webkit-animation-delay: 7s;
-          animation-delay: 7s;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
   transition-delay: 0.8s;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list5 {
-  -webkit-animation-delay: 9s;
-          animation-delay: 9s;
+  -webkit-animation-delay: 8.5s;
+          animation-delay: 8.5s;
   transition-delay: 1s;
 }
 @-webkit-keyframes fluffy1 {
@@ -843,23 +843,50 @@ main .service .service_lists .service_list {
   font-family: "Noto Serif JP", serif;
   margin-top: 50px;
   border-radius: 20px;
-  background-color: rgb(252, 243, 244);
+  background-color: rgb(249, 234, 236);
+  box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
   transform: translateY(100px);
   opacity: 0;
   visibility: hidden;
   transition: 1s;
 }
-main .service .service_lists .service_list:nth-of-type(2) {
-  background-color: rgb(251, 237, 251);
+main .service .service_lists .service_list:nth-of-type(2) .service_cotent {
+  flex-direction: row-reverse;
 }
 main .service .service_lists .service_list h2 {
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 10px;
   font-size: 3rem;
+  font-weight: bold;
+}
+main .service .service_lists .service_list .service_cotent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  height: 80%;
+}
+main .service .service_lists .service_list .service_cotent .service_cotent_img {
+  width: 45%;
+}
+main .service .service_lists .service_list .service_cotent .service_cotent_img img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+main .service .service_lists .service_list .service_cotent .service_cotent_txt {
+  width: 55%;
+}
+main .service .service_lists .service_list .service_cotent .service_cotent_txt p {
+  line-height: 1.8;
 }
 main .service .service_lists .service_list:nth-of-type(2) {
   top: 1000px;
   z-index: 10;
+  background-color: rgb(251, 237, 251);
 }
 main .service .service_lists .service_list:nth-of-type(3) {
   top: 1500px;
