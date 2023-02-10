@@ -107,7 +107,7 @@ img {
       content: "お問い合わせ";
     }
     &::after {
-      width: 780px;
+      width: 700px;
       left: 280px;
     }
   }
@@ -751,7 +751,7 @@ main {
   ***************************************************/
   .service {
     margin-top: $margin-top;
-    margin-bottom: $margin-bottom;
+    // margin-bottom: $margin-bottom;
     position: relative;
     .service_t {
       opacity: 0;
@@ -760,7 +760,7 @@ main {
       transition: 2s;
       &.show {
         position: fixed;
-        top: 13%;
+        top: 10%;
         left: 18%;
         opacity: 1;
         visibility: visible;
@@ -819,6 +819,34 @@ main {
             }
           }
         }
+        .service_other_txt {
+          padding: 0 20px;
+          h3 {
+            position: relative;
+            font-size: 2rem;
+            font-weight: bold;
+            padding-left: 30px;
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              left: 0;
+              top:0;
+              transform: translateY(50%);
+              background-image: url("../img/check.png");
+              background-position: center;
+              background-size: cover;
+              height: 20px;
+              width: 20px;
+            }
+            &:not(:nth-of-type(1)) {
+              margin-top: 10px;
+            }
+          }
+          p {
+            padding-left: 30px;
+          }
+        }
         &:nth-of-type(2) {
           top: 1000px;
           z-index: 10;
@@ -830,7 +858,7 @@ main {
         }
         &.scroll_animation.show {
           position: fixed;
-          top: 30%;
+          top: 25%;
           left: 20%;
           width: 60%;
           opacity: 1;
@@ -843,10 +871,10 @@ main {
             height: 400px;
             width: 90%;
             &:nth-of-type(2) {
-              top: 37%;
+              top: 36%;
             }
             &:nth-of-type(3) {
-              top: 70%;
+              top: 72%;
             }
           }
         }
@@ -860,12 +888,12 @@ main {
 
   ***************************************************/
   .contact {
-    padding-top: $margin-top;
+    margin-top: 200px;
     margin-bottom: $margin-bottom;
     .contact_t {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-280px);
+      transform: translateY(-200px);
       transition: 1.5s;
     }
     .contact_lists {
