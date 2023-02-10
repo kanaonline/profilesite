@@ -923,7 +923,7 @@ main .contact {
 main .contact .contact_t {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-200px);
+  transform: translateY(-250px);
   transition: 1.5s;
 }
 main .contact .contact_lists {
