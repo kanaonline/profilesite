@@ -68,32 +68,6 @@ header_txt.innerHTML = newText;
 
 
 
-/********************************************************
-
-
- menubar　下：非表示　上：表示
-
-
-************************************?*******************/
-
-let beforeScrollValue = 0;
-
-const header_nemu = document.querySelector('.main_top').classList;
-
-window.addEventListener('scroll',() => {
-  if(window.scrollY > beforeScrollValue){
-    // 下にスクロールした場合の処理
-    header_nemu.add('inActive');
-  }else{
-    // 上にスクロールした場合の処理
-    header_nemu.remove('inActive');
-  }
-  beforeScrollValue = window.scrollY;
-});
-
-
-
-
 
 /********************************************************
 
@@ -128,3 +102,34 @@ document.addEventListener("scroll", () => {
   }); // forEach scroll
 }); // scroll
 
+
+
+
+/********************************************************
+
+
+ menubar　下：非表示　上：表示
+
+
+************************************?*******************/
+
+let beforeScrollValue = 0;
+
+const header_nemu = document.querySelector('.main_top').classList;
+window.addEventListener('scroll',() => {
+  if(window.scrollY > beforeScrollValue){
+    // 下にスクロールした場合の処理
+    header_nemu.add('inActive');
+  }else{
+    // 上にスクロールした場合の処理
+    header_nemu.remove('inActive');
+    if(service_title.classList.contains("show")) {
+      service_height.style.height = "1600px";
+      service_title.style.position = "static";
+      service_lists.forEach(service_list => {
+      service_list.classList.add("card");
+      }); //forEach service
+    }
+  }
+  beforeScrollValue = window.scrollY;
+});
