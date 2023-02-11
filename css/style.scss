@@ -588,13 +588,18 @@ main {
         transform: scale(0.5);
         visibility: hidden;
         transition: 1.5s;
+        &:nth-of-type(odd) {
+          &.scroll_animation.show:hover {
+            background-color: rgb(183, 142, 183);
+          }
+        }
         &.scroll_animation.show {
           transform: none;
           opacity: 1;
           visibility: visible;
           animation: fluffy1 6s 5s ease-out forwards;
           &:hover {
-            transform: translateY(-30px);
+            background-color: pink;
             cursor: pointer;
           }
           &.list1 {

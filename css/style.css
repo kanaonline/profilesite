@@ -607,6 +607,9 @@ main .skill .skill_lists .skill_list {
   visibility: hidden;
   transition: 1.5s;
 }
+main .skill .skill_lists .skill_list:nth-of-type(odd).scroll_animation.show:hover {
+  background-color: rgb(183, 142, 183);
+}
 main .skill .skill_lists .skill_list.scroll_animation.show {
   transform: none;
   opacity: 1;
@@ -615,7 +618,7 @@ main .skill .skill_lists .skill_list.scroll_animation.show {
           animation: fluffy1 6s 5s ease-out forwards;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show:hover {
-  transform: translateY(-30px);
+  background-color: pink;
   cursor: pointer;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list1 {
