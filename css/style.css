@@ -57,45 +57,57 @@ img {
   visibility: visible;
   transform: none;
 }
+.title.scroll_animation.show::after {
+  content: "";
+  position: absolute;
+  background: #777;
+  height: 1px;
+  top: 50%;
+  left: 22%;
+  -webkit-animation: border_anim 3s 1s linear forwards;
+          animation: border_anim 3s 1s linear forwards;
+}
+@-webkit-keyframes border_anim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes border_anim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 70%;
+  }
+}
+.title.scroll_animation.show.skill_t::after {
+  left: 20%;
+}
+.title.scroll_animation.show.service_t::after {
+  left: 30.2%;
+}
+.title.scroll_animation.show.contact_t::after {
+  left: 30%;
+}
 .title::before {
   content: "作品";
   position: absolute;
   top: -3px;
-  left: 3%;
   color: #777;
   font-size: 1.2rem;
-  display: block;
-}
-.title::after {
-  content: "";
-  position: absolute;
-  background: #777;
-  width: 750px;
-  height: 1px;
-  left: 200px;
-  top: 50%;
   display: block;
 }
 .title.skill_t::before {
   content: "技術";
 }
-.title.skill_t::after {
-  width: 750px;
-  left: 180px;
-}
 .title.service_t::before {
   content: "提供";
 }
-.title.service_t::after {
-  width: 700px;
-  left: 250px;
-}
 .title.contact_t::before {
   content: "お問い合わせ";
-}
-.title.contact_t::after {
-  width: 700px;
-  left: 280px;
 }
 
 .title_backimg {
@@ -799,6 +811,7 @@ main .service .service_t {
 }
 main .service .service_t.show {
   position: fixed;
+  width: 960px;
   top: 10%;
   left: 18%;
   opacity: 1;
