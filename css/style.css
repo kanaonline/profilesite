@@ -29,6 +29,10 @@ a {
   text-decoration: none;
 }
 
+html, body, a {
+  cursor: none;
+}
+
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -670,7 +674,6 @@ main .skill .skill_lists .skill_list.scroll_animation.show {
 }
 main .skill .skill_lists .skill_list.scroll_animation.show:hover {
   background-color: pink;
-  cursor: pointer;
 }
 main .skill .skill_lists .skill_list.scroll_animation.show.list1 {
   -webkit-animation-delay: 1s;
@@ -1030,7 +1033,6 @@ main .contact .contact_lists .contact_list .btbt {
   border: none;
   width: 15%;
   margin: 0 auto;
-  cursor: pointer;
   transition: 0.5s;
   font-size: 1.4rem;
   border-radius: 5px;
@@ -1063,5 +1065,31 @@ footer {
 }
 footer small {
   color: #fff;
+}
+
+/**************************************************
+
+    #cursor
+
+***************************************************/
+#cursor {
+  transform: translate(0, 0);
+  pointer-events: none;
+  position: fixed;
+  top: -7px;
+  left: -7px;
+  width: 16px;
+  height: 16px;
+  background: rgb(255, 182, 193);
+  border-radius: 50%;
+  z-index: 999;
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+}
+#cursor.hov_ {
+  top: -12px;
+  left: -12px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 182, 193, 0.5);
 }
 /*# sourceMappingURL=style.css.map */
