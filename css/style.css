@@ -40,6 +40,11 @@ img {
   margin: 0 auto;
   padding: 0 20px;
 }
+@media screen and (max-width: 1000px) {
+  .blContainer {
+    max-width: 100%;
+  }
+}
 
 .title {
   position: relative;
@@ -358,6 +363,11 @@ main .main_top {
   align-items: center;
   transition: 0.3s;
 }
+@media screen and (max-width: 1000px) {
+  main .main_top {
+    width: 768px;
+  }
+}
 main .main_top.inActive {
   transform: translateY(-100%);
 }
@@ -408,6 +418,13 @@ main .work .title_backimg {
   width: calc(50vw + 50%);
   height: 180px;
 }
+@media screen and (max-width: 1000px) {
+  main .work .title_backimg {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
 main .work .title {
   margin-top: 200px;
 }
@@ -431,6 +448,11 @@ main .work .work_list.english {
   margin-top: 200px;
   flex-direction: row-reverse;
   gap: 50px;
+}
+@media screen and (max-width: 1000px) {
+  main .work .work_list.english {
+    flex-direction: column-reverse;
+  }
 }
 main .work .work_list .work_list_txt {
   width: 40%;
@@ -583,6 +605,11 @@ main .work .work_list .work_items .work_list_box.list2 {
   background-color: rgba(216, 191, 216, 0.8);
   box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
 }
+@media screen and (max-width: 1000px) {
+  main .work .work_list {
+    flex-direction: column-reverse;
+  }
+}
 main .skill {
   position: relative;
   height: 1100px;
@@ -590,11 +617,23 @@ main .skill {
 main .skill .title_backimg {
   position: absolute;
   top: -5%;
-  right: -22%;
+  right: -24%;
   left: auto;
   background-image: url("../img/skill.jpg");
-  width: calc(50vw + 46%);
+  width: calc(50vw + 49%);
   height: 350px;
+}
+@media screen and (max-width: 1280px) {
+  main .skill .title_backimg {
+    left: 2%;
+    width: calc(50vw + 46%);
+  }
+}
+@media screen and (max-width: 1000px) {
+  main .skill .title_backimg {
+    right: 0;
+    width: calc(50vw + 30%);
+  }
 }
 main .skill .skill_lists {
   position: relative;
