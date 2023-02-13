@@ -6,13 +6,10 @@
 		@content;
 	}
 }
-// @include mq($sm) {
-//   font-size: 50%;
-// }
  // メディアクエリブレイクポイント
  $lg: 1280px;
  $md: 1000px;
- $sm: 767px;
+ $sm: 768px;
  $xs: 350px;
 
 //その他の変数
@@ -21,7 +18,7 @@ $margin-bottom: 200px;
 $main-color: rgb(255, 182, 193);
 $main-backcolor: rgba(255, 182, 193, 0.5); 
 $sub-color: rgb(216, 191, 216);
-$sub-backcolor: rgb(216, 191, 216,0.8);
+$sub-backcolor: rgb(216, 191, 216,0.7);
 
 *,*::before,*::after {
   box-sizing: border-box;
@@ -93,7 +90,7 @@ img {
       height: 1px;
       top: 50%;
       left: 22%;
-      animation: border_anim 3s 1s linear forwards;
+      animation: border_anim 3s linear forwards;
       @keyframes border_anim {
         0%{
           width: 0%;
@@ -102,15 +99,27 @@ img {
           width: 70%;
         }
       } //border_anim
+      @include mq($md) {
+        left: 28%;
+      }
     } //after
     &.skill_t::after {
       left: 20%;
+      @include mq($md) {
+        left: 25%;
+      }
     }
     &.service_t::after {
       left: 30.2%;
+      @include mq($md) {
+        left: 35%;
+      }
     }
     &.contact_t::after {
       left: 30%;
+      @include mq($md) {
+        left: 45%;
+      }
     }
   } //.scroll_animation.show
   &::before {
@@ -252,7 +261,10 @@ header {
             opacity: 0;
           }
         }
-      }
+        @include mq($md) {
+          font-size: 10rem;
+        }
+      } //header_txt h1
     } //header_txt
     .header_scroll {
       display: inline-block;
@@ -326,6 +338,10 @@ main {
   background-size: cover;
   background-attachment: fixed;
   padding-top: $margin-top;
+  @include mq($md) {
+    background-image: url(../img/main_backimg_opa.png);
+    background-position: 80% 20%;
+  }
   .main_top {
     position: fixed;
     top: 0;
@@ -338,7 +354,6 @@ main {
     transition: .3s;
     @include mq($md) {
       width: 768px;
-
     }
     &.inActive {
       transform: translateY(-100%);
@@ -376,9 +391,6 @@ main {
           opacity: 0.7;
         }
       }
-      @include mq($md) {
-        // width: calc(800px / 4); 後で確認
-      }
     }
   } //main_top_menu_list
   /**************************************************
@@ -400,7 +412,7 @@ main {
       @include mq($md) {
         left: 0;
         right: 0;
-        width: 100%;
+        width: 70%;
       }
       } //title_backimg
     .title {
@@ -413,8 +425,16 @@ main {
       justify-content: center;
       font-family: 'Noto Serif JP', serif;
       height: 400px;
+      @include mq($md) {
+        margin-top: 50px;
+        height: 700px;
+        flex-direction: column;
+      }
       &:nth-of-type(2) .work_list_txt  {
         transform: translateX(70px);
+        @include mq($md) {
+          transform: translateX(-70px);
+        }
       }
       &.scroll_animation.show .work_list_txt,
       &.scroll_animation.show .work_items {
@@ -429,6 +449,28 @@ main {
         @include mq($md) {
           flex-direction: column-reverse;
         }
+        .work_list_txt {
+          @include mq($md) {
+            top: -100px;
+          }
+        }
+        .work_items {
+          .work_list_item {
+            @include mq($md) {
+              top: -120px;
+            }
+          }
+          .work_list_box {
+            @include mq($md) {
+              top: -150px;
+            }
+            &.list2 {
+              @include mq($md) {
+                top: -150px;
+              }
+            }
+          }
+        } //work_items
       }
       .work_list_txt {
         width: 40%;
@@ -444,6 +486,7 @@ main {
         }
         p {
           padding-top: 5px;
+          padding-left: 30px;
           font-size: 1.6rem;
         }
         .work_list_link {
@@ -489,7 +532,13 @@ main {
             }
           }
         }
-      }
+        @include mq($md) {
+          width: 80%;
+          top: 20px;
+          left: 10%;
+          position: absolute;
+        }
+      } //work_list_txt
       .work_items {
         position: relative;
         width: 60%;
@@ -511,12 +560,21 @@ main {
               z-index: 3;
               background-color: rgba(255,255,255,0.7);
               box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
+              @include mq($md) {
+                height: 340px;
+                width: 550px;
+                top: -30px;
+                left: 30%;
+              }
               img {
                 object-fit: cover;
               }
             }
-          }
-          //work_list_item
+            @include mq($md) {
+              left: 5%;
+              z-index: 3;
+            }
+          } //work_list_item
           .work_list_item.item1 {
             position: relative;
             img {
@@ -550,10 +608,16 @@ main {
                 transform: skew(45deg);
                 transition: .5s;
               }
+              @include mq($md) {
+                background-color: $sub-color;
+              }
             }
             &:hover {
               img {
               opacity: 0;
+              @include mq($md) {
+                opacity: .7;
+              }
               }
               .work_list_item_txt {
                 visibility: visible;
@@ -561,12 +625,17 @@ main {
                 transform: translate(-50%,-30px);
               }
             }
-          }
-          .work_list_item.item2 a {
-            top: 70px;
-            right: 0%;
-            transform: rotate(10deg);
-            z-index: 2;
+          } //work_list_item.item1
+          .work_list_item.item2 {
+            a {
+              top: 70px;
+              right: 0;
+              transform: rotate(10deg);
+              z-index: 2;
+              @include mq($md) {
+               display: none;
+              }
+            }
           }
         }//work_list_items
         .work_list_box {
@@ -578,6 +647,11 @@ main {
           transform: rotate(15deg);
           background-color: $main-backcolor;
           box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
+          @include mq($md) {
+            top: -30px;
+            left: 200px;
+            height: 350px;
+          }
         }
         .work_list_box.list2 {
           top: 10px;
@@ -585,11 +659,12 @@ main {
           transform: rotate(-15deg);
           background-color: $sub-backcolor;
           box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
+          @include mq($md) {
+            top: -30px;
+            left: 220px;
+          }
         }
       } //work_items
-      @include mq($md) {
-        flex-direction: column-reverse;
-      }
     } //work_list
   } //section work
 
@@ -601,6 +676,9 @@ main {
   .skill {
     position: relative;
     height: 1100px;
+    @include mq($md) {
+      height: 2100px;
+      }
     .title_backimg {
       position: absolute;
       top: -5%;
@@ -628,6 +706,9 @@ main {
       gap: 10px;
       font-family: 'Noto Serif JP', serif;
       z-index: 2;
+      @include mq($md) {
+        flex-direction: column;
+      }
       .skill_list {
         position: absolute;
         padding: 30px;
@@ -649,6 +730,9 @@ main {
           opacity: 1;
           visibility: visible;
           animation: fluffy1 6s 5s ease-out forwards;
+          @include mq($md) {
+            animation: none;
+          }
           &:hover {
             background-color: pink;
           }
@@ -692,6 +776,9 @@ main {
             transform: translateY(0); } }
         &:nth-last-of-type(odd) {
           background-color: $sub-backcolor;
+          @include mq($md) {
+            background-color: $sub-color;
+          }
           &::before {
             color: $main-color;
           }
@@ -740,7 +827,10 @@ main {
           top: 50%;
           left: 15%;
           width: 30%;
-          
+          @include mq($md) {
+            width: 300px;
+            left: 7%;
+          }
         }
         &.list2 { 
           height: 280px;
@@ -749,6 +839,9 @@ main {
           left: 55%;
           &::before {
             content: "02";
+          }
+          @include mq($md) {
+            width: 300px;
           }
         }
         &.list3 {
@@ -760,6 +853,11 @@ main {
             content: "03";
             top: -23%;
           }
+          @include mq($md) {
+            width: 360px;
+            top: 420px;
+            left: 28%;
+          }
         }
         &.list4 {
           height: 330px;
@@ -769,6 +867,11 @@ main {
           &::before {
             content: "04";
             top: -23%;
+          }
+          @include mq($md) {
+            width: 360px;
+            top: 920px;
+            left: 28%;
           }
         }
         &.list5 {
@@ -780,6 +883,14 @@ main {
             content: "05";
             top: -23%;
           }
+          @include mq($md) {
+            width: 360px;
+            top: 1420px;
+            left: 28%;
+          }
+        }
+        @include mq($md) {
+          background-color: $main-color;
         }
       } //skill_list
     } //skill_lists
@@ -797,8 +908,11 @@ main {
     .service_t {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(300px);
+      transform: translateY(400px);
       transition: 2s;
+      @include mq($md) {
+        transform: translateY(500px);
+      }
       &.show {
         position: fixed;
         width: 960px;
@@ -807,6 +921,10 @@ main {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+        @include mq($md) {
+          width: 700px;
+          left: 5%;
+        }
       }
     }
     .service_lists {
@@ -829,6 +947,11 @@ main {
         opacity: 0;
         visibility: hidden;
         transition: 1s;
+        @include mq($md) {
+          left: 10%;
+          width: 80%;
+          padding:0;
+        }
         &:nth-of-type(2) .service_cotent {
           flex-direction: row-reverse;
         }
@@ -906,6 +1029,10 @@ main {
           opacity: 1;
           transform: translateY(0);
           visibility: visible;
+          @include mq($md) {
+            left: 10%;
+            width: 80%;
+          }
           &.card {
             position: absolute;
             top: 3%;
@@ -916,7 +1043,7 @@ main {
               top: 36%;
             }
             &:nth-of-type(3) {
-              top: 72%;
+              top: 69%;
             }
           }
         }
@@ -937,6 +1064,9 @@ main {
       visibility: hidden;
       transform: translateY(-250px);
       transition: 1.5s;
+      @include mq($md) {
+        width: 80%;
+      }
     }
     .contact_lists {
       width: 70%;
@@ -974,6 +1104,7 @@ main {
           height: 50px;
           font-size: 1.6rem;
           padding: 10px;
+          cursor: none;
         }
         textarea {
           margin-top: 5px;
@@ -982,6 +1113,7 @@ main {
           padding: 10px;
           resize: none;
           width: 100%;
+          cursor: none;
         }
         .btbt {
           background-color: #eee;
@@ -998,7 +1130,10 @@ main {
         }
       }
     }
-  }
+    @include mq($md) {
+      margin-bottom: 50px;
+    }
+  } //contact
   /**************************************************
 
     comment
@@ -1047,7 +1182,7 @@ footer {
   left: -7px;   //座標調節（カーソル位置と円の中心を合わせる）
   width: 16px;   //カーソルの直径
   height: 16px;  //カーソルの直径
-  background: $main-color;
+  background: $main-backcolor;
   border-radius: 50%;
   z-index: 999;
   transition: width .3s, height .3s, top .3s, left .3s;
