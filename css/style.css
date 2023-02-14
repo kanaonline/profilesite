@@ -138,6 +138,11 @@ img {
 .title.contact_t::before {
   content: "お問い合わせ";
 }
+@media screen and (max-width: 1000px) {
+  .title {
+    font-size: 4rem;
+  }
+}
 
 .title_backimg {
   position: absolute;
@@ -273,7 +278,7 @@ header .header_open .header_txt h1 > span > span {
 }
 @media screen and (max-width: 1000px) {
   header .header_open .header_txt h1 {
-    font-size: 10rem;
+    font-size: 8rem;
   }
 }
 header .header_open .header_scroll {
@@ -387,6 +392,11 @@ main {
     background-position: 80% 20%;
   }
 }
+@media screen and (max-width: 767px) {
+  main {
+    padding-top: 5px;
+  }
+}
 main .main_top {
   position: fixed;
   top: 0;
@@ -400,7 +410,7 @@ main .main_top {
 }
 @media screen and (max-width: 1000px) {
   main .main_top {
-    width: 768px;
+    width: 100%;
   }
 }
 main .main_top.inActive {
@@ -440,6 +450,17 @@ main .main_top_menu_list li a:hover {
   transform: translateY(-2px) scale(1.1);
   opacity: 0.7;
 }
+@media screen and (max-width: 1000px) {
+  main .main_top_menu_list li {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  main .main_top_menu_list {
+    justify-content: flex-end;
+    padding: 0 30px;
+  }
+}
 main .work {
   margin-bottom: 300px;
   position: relative;
@@ -476,6 +497,11 @@ main .work .work_list {
     margin-top: 50px;
     height: 700px;
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 767px) {
+  main .work .work_list {
+    margin-top: 20px;
   }
 }
 main .work .work_list:nth-of-type(2) .work_list_txt {
@@ -619,6 +645,14 @@ main .work .work_list .work_items .work_list_items .work_list_item a {
     left: 30%;
   }
 }
+@media screen and (max-width: 767px) {
+  main .work .work_list .work_items .work_list_items .work_list_item a {
+    height: 220px;
+    width: 350px;
+    top: -30px;
+    left: -5%;
+  }
+}
 main .work .work_list .work_items .work_list_items .work_list_item a img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -708,6 +742,11 @@ main .work .work_list .work_items .work_list_box {
     top: -30px;
     left: 200px;
     height: 350px;
+  }
+}
+@media screen and (max-width: 767px) {
+  main .work .work_list .work_items .work_list_box {
+    display: none;
   }
 }
 main .work .work_list .work_items .work_list_box.list2 {
@@ -925,6 +964,11 @@ main .skill .skill_lists .skill_list p {
   font-size: 1.4rem;
   line-height: 1.6;
 }
+@media screen and (max-width: 1000px) {
+  main .skill .skill_lists .skill_list p {
+    margin-top: 20px;
+  }
+}
 main .skill .skill_lists .skill_list.list1 {
   height: 280px;
   width: 30%;
@@ -934,7 +978,8 @@ main .skill .skill_lists .skill_list.list1 {
 }
 @media screen and (max-width: 1000px) {
   main .skill .skill_lists .skill_list.list1 {
-    width: 300px;
+    height: 260px;
+    width: 280px;
     left: 7%;
   }
 }
@@ -949,7 +994,8 @@ main .skill .skill_lists .skill_list.list2::before {
 }
 @media screen and (max-width: 1000px) {
   main .skill .skill_lists .skill_list.list2 {
-    width: 300px;
+    height: 260px;
+    width: 280px;
   }
 }
 main .skill .skill_lists .skill_list.list3 {

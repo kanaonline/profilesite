@@ -9,7 +9,7 @@
  // メディアクエリブレイクポイント
  $lg: 1280px;
  $md: 1000px;
- $sm: 768px;
+ $sm: 767px;
  $xs: 350px;
 
 //その他の変数
@@ -145,6 +145,9 @@ img {
       content: "お問い合わせ";
     }
   }
+  @include mq($md) {
+    font-size: 4rem;
+  }
 } //.title
 
 .title_backimg {
@@ -230,8 +233,6 @@ header {
       top: 50%;
       left: 50%;
       width: 100%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       h1 {
         font-family: 'Petit Formal Script', cursive;
@@ -262,7 +263,7 @@ header {
           }
         }
         @include mq($md) {
-          font-size: 10rem;
+          font-size: 8rem;
         }
       } //header_txt h1
     } //header_txt
@@ -342,6 +343,9 @@ main {
     background-image: url(../img/main_backimg_opa.png);
     background-position: 80% 20%;
   }
+  @include mq($sm) {
+    padding-top: 5px;
+  }
   .main_top {
     position: fixed;
     top: 0;
@@ -353,7 +357,7 @@ main {
     align-items: center;
     transition: .3s;
     @include mq($md) {
-      width: 768px;
+      width: 100%;
     }
     &.inActive {
       transform: translateY(-100%);
@@ -391,6 +395,13 @@ main {
           opacity: 0.7;
         }
       }
+      @include mq($md) {
+        width: calc(400px / 4);
+      }
+    }
+    @include mq($md) {
+    justify-content: flex-end;
+    padding: 0 30px;
     }
   } //main_top_menu_list
   /**************************************************
@@ -429,6 +440,9 @@ main {
         margin-top: 50px;
         height: 700px;
         flex-direction: column;
+      }
+      @include mq($sm) {
+        margin-top: 20px;
       }
       &:nth-of-type(2) .work_list_txt  {
         transform: translateX(70px);
@@ -566,6 +580,12 @@ main {
                 top: -30px;
                 left: 30%;
               }
+              @include mq($sm) {
+                height: 220px;
+                width: 350px;
+                top: -30px;
+                left: -5%;
+              }
               img {
                 object-fit: cover;
               }
@@ -651,6 +671,9 @@ main {
             top: -30px;
             left: 200px;
             height: 350px;
+          }
+          @include mq($sm) {
+            display: none;
           }
         }
         .work_list_box.list2 {
@@ -820,6 +843,9 @@ main {
           padding: 0 25px 0 30px;
           font-size: 1.4rem;
           line-height: 1.6;
+          @include mq($md) {
+            margin-top: 20px;
+          }
         }
         &.list1 {
           height: 280px;
@@ -828,7 +854,8 @@ main {
           left: 15%;
           width: 30%;
           @include mq($md) {
-            width: 300px;
+            height: 260px;
+            width: 280px;
             left: 7%;
           }
         }
@@ -841,7 +868,8 @@ main {
             content: "02";
           }
           @include mq($md) {
-            width: 300px;
+            height: 260px;
+            width: 280px;
           }
         }
         &.list3 {
