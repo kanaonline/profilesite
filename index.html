@@ -26,7 +26,7 @@
         <video class="header_video" src="img/header_video.mp4" loop autoplay muted  playsinline></video>
       </div>
       <div class="header_txt">
-        <h1>Kana Profile</h1>
+        <h1>Kana's Portfolio</h1>
       </div>
       <a class="header_scroll">scroll down</a>
     </div>
@@ -36,9 +36,11 @@
   <main id="main" class="main">
     <div class="blContainer">
       <div class="main_top">
+        <div class="menuButton_mask" id="menuButton_mask"></div>
         <div class="main_top_logo">
           <a href="#"><img src="img/logo.png" alt=""></a>
         </div>
+        <!-- pc・タブレット用menu-->
         <nav class="main_top_menu">
           <ul class="main_top_menu_list">
             <li><a href="#work">Work</a></li>
@@ -47,6 +49,32 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <!-- スマートフォン用三本線メニュー -->
+        <a class="main_wrapper main_menu_sm" id="main_top_menuButton">
+          <div class="main_top_menuButton_list"></div>
+          <div class="main_top_menuButton_list"></div>
+          <div class="main_top_menuButton_list"></div>
+        </a>
+      </div>
+      <!-- スマートフォン用三本線メニューの中身
+      <nav class="humbuger_menu" id="humbuger_menu">
+          <ul>
+            <li class="humbuger_menu_list">
+              <a href="#work">Work</a>
+            </li>
+            <li class="humbuger_menu_list">
+              <a href="#skill">skill</a>
+            </li>
+            <li class="humbuger_menu_list">
+              <a href="#service">Service</a>
+            </li>
+            <li class="humbuger_menu_list">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+          <a class="humbuger_menu_btn" id="humbuger_menu_btn" >Close</a>
+        </nav>
+        <div class="main_wrapper main_menu"> -->
       </div>
     </div>
 
@@ -92,7 +120,7 @@
             2. English School(sample site)
           </h3>
           <p>
-            GitHubを使用し、<br>英語スクールのホームページを制作、掲示。
+            GitHubを使用し、<br>英語スクールのホームページを制作。
           </p>
           <a class="work_list_link" href="https://kanaonline.github.io/AtoZ-Englishshcool/" target="_blank" rel="noopener noreferrer">
             site open
@@ -132,7 +160,8 @@
         <li class="skill_list list2 scroll_animation">
           <h2>CSS</h2>
           <p>
-            アニメーション作成、レスポンシブ対応、またSCSSを用いて効率的にコーディングを行います。
+            アニメーション作成やレスポンシブ対応致します。<br>
+            またSCSSを用いて効率的にコーディングを行います。
           </p>
         </li>
         <li class="skill_list list3 scroll_animation">
@@ -163,11 +192,11 @@
       <ul class="service_lists">
         <li class="service_list scroll_animation">
           <h2>ホームページ制作</h2>
-          <div class="service_cotent">
-            <div class="service_cotent_img">
+          <div class="service_content">
+            <div class="service_content_img">
               <img src="img/website.jpg" alt="web制作">
             </div>
-            <div class="service_cotent_txt">
+            <div class="service_content_txt">
               <p>お客様のご希望に沿ったホームページを制作致します。<br>
                 HTML/ CSS(SCSS) /JavaScriptを使用した静的なホームページやWordPressを使用したお客様自身が更新できる動的なホームページを制作致します。<br>
                 また様々なデバイス(パソコン・タブレット・スマートフォン)へのレスポンシブデザインにも対応致します。
@@ -177,11 +206,11 @@
         </li>
         <li class="service_list scroll_animation">
           <h2>ホームページリニューアル</h2>
-          <div class="service_cotent">
-            <div class="service_cotent_img">
+          <div class="service_content">
+            <div class="service_content_img">
               <img src="img/renewal.jpg" alt="web制作">
             </div>
-            <div class="service_cotent_txt">
+            <div class="service_content_txt">
               <p>現状のサイトの改善点を改善することはもちろんのこと、よりお客様の魅力が伝わるホームページにリニューアル致します。<br>
                 またHTMLやCSSを使用した静的サイトからWordPressを使用した動的サイトへの移行も対応致します。<br>
                 昔に制作したタブレットやスマートフォンに対応していないホームページのレスポンシブデザインに対応致します。

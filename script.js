@@ -69,6 +69,43 @@ header_txt.innerHTML = newText;
 
 
 
+/**************************************************
+ * 
+ * main三本線メニュー
+ * 
+***************************************************/
+const header_top_menuButton = document.getElementById("main_top_menuButton");
+menuButton_mask = document.getElementById("menuButton_mask");
+humbuger_menu =  document.getElementById("humbuger_menu");
+humbuger_menu_lists = document.querySelectorAll('.humbuger_menu_list > a');
+humbuger_menu_btn = document.getElementById("humbuger_menu_btn");
+
+document.addEventListener('DOMContentLoaded',function() {
+header_top_menuButton.addEventListener('click',() => {
+header_top_menuButton.classList.toggle('active');
+menuButton_mask.classList.toggle('active');
+humbuger_menu.classList.toggle('active');
+body.classList.toggle('inactive');
+
+humbuger_menu_lists.forEach(humbuger_menu_list => {
+humbuger_menu_list.addEventListener('click', () => {
+  header_top_menuButton.classList.remove('active');
+  menuButton_mask.classList.remove('active');
+  humbuger_menu.classList.remove('active');
+  body.classList.remove('inactive');
+});
+});
+humbuger_menu_btn.addEventListener('click', () => {
+header_top_menuButton.classList.remove('active');
+menuButton_mask.classList.remove('active');
+humbuger_menu.classList.remove('active');
+humbuger_menu.classList.remove('active');
+body.classList.remove('inactive');
+});
+});
+});
+
+
 /********************************************************
 
 

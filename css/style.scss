@@ -10,7 +10,7 @@
  $lg: 1280px;
  $md: 1000px;
  $sm: 767px;
- $xs: 350px;
+ $xs: 400px;
 
 //その他の変数
 $margin-top: 100px;
@@ -237,7 +237,7 @@ header {
       h1 {
         font-family: 'Petit Formal Script', cursive;
         color: rgba(255,255,255,0.7);
-        font-size: 12rem;
+        font-size: 10rem;
         white-space: nowrap;
         text-align: center;
         > span {
@@ -265,6 +265,9 @@ header {
         @include mq($md) {
           font-size: 8rem;
         }
+        @include mq($sm) {
+          font-size: 3.7rem;
+        }
       } //header_txt h1
     } //header_txt
     .header_scroll {
@@ -276,7 +279,7 @@ header {
       color: #fff;
       padding: 10px 10px 110px;
       overflow: hidden;
-      font-size: 14px;
+      font-size: 1.4rem;
       font-family: 'Josefin Sans', sans-serif;
       line-height: 1;
       letter-spacing: .2em;
@@ -319,6 +322,9 @@ header {
           transform: translateY(30px);
         }
       }
+      @include mq($sm) {
+        font-size: 1.2rem;
+      }
     } //header_scroll
   } //header_open
 } //haeder
@@ -349,7 +355,9 @@ main {
   .main_top {
     position: fixed;
     top: 0;
-    width: 1000px;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
     height: 100px;
     z-index: 100;
     display: flex;
@@ -376,15 +384,17 @@ main {
           opacity: 0.7;
         }
       }
-     }
-  } //main_top
-  .main_top_menu_list {
-    display: flex;
-    li {
-      width: calc(500px / 4);
-      a {
-        display: inline-block;
-        text-align: center;
+      @include mq($sm) {
+        width: 60px;
+      }
+    } //main_top_logo
+    .main_top_menu_list {
+      display: flex;
+      li {
+        width: calc(500px / 4);
+        a {
+          display: inline-block;
+          text-align: center;
         width: 100%;
         padding: 20px 0;
         font-size: 1.8rem;
@@ -393,17 +403,126 @@ main {
         &:hover {
           transform: translateY(-2px) scale(1.1);
           opacity: 0.7;
+          }
         }
       }
-      @include mq($md) {
-        width: calc(400px / 4);
+      @include mq($sm) {
+        display: none;
+      }
+    } //main_top_menu_list
+    // スマートフォン用三本線メニュー
+    .main_menu_sm {
+      display: none;
+      @include mq($sm) {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        right: 10px;
+        transition: .3s;
+        &:hover {
+          background-color: #fff;
+        }
+        &.active {
+          transform: rotate(90deg);
+          .main_top_menuButton_list:nth-of-type(2) {
+            opacity: 0;
+          }
+          .main_top_menuButton_list:nth-of-type(1) {
+            transform: rotate(45deg) translate(-50%,0);
+            transform-origin: 0% 50%;
+          }
+          .main_top_menuButton_list:nth-of-type(3) {
+            transform: rotate(-45deg) translate(-50%,0);
+            transform-origin: 0% 50%;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+        .main_top_menuButton_list {
+          height: 1px;
+          width: 40px;
+          background-color: #333;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, 0);
+          transition: all .5s;
+        }
+        .main_top_menuButton_list:nth-of-type(1) {
+          transform: translate(-50%,-10px);
+        }
+        .main_top_menuButton_list:nth-of-type(3) {
+          transform: translate(-50%,10px);
+        }
       }
     }
-    @include mq($md) {
-    justify-content: flex-end;
-    padding: 0 30px;
+  } //main_top
+  
+/*--------------------------------
+
+   mask
+
+-----------------------------------*/
+.menuButton_mask {
+  position: fixed;
+  height: 500px;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+.menuButton_mask.active {
+  opacity: 1;
+  visibility: visible;
+}
+.humbuger_menu {
+  position: absolute;
+  top: 0;
+  height: 600px;
+  width: 100%;
+  padding: 100px 20px;
+  z-index: 3;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  transform: translateY(-100px);
+  transition: .5s;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .humbuger_menu_list a {
+    display: inline-block;
+    width: 70%;
+    padding: 1.2em 0;
+    font-size: 1.8rem;
+    transition: .5s;
+    border-bottom: 1px solid #333;
+    &:hover {
+      font-weight: bold;
+      background-color: #333;
     }
-  } //main_top_menu_list
+  }
+  .humbuger_menu_btn {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 0.5em 1.2em;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: .5s;
+    &:hover {
+      background-color: #333;
+    }
+  }
+} //humbuger_menu
+
   /**************************************************
 
     section work
@@ -425,9 +544,16 @@ main {
         right: 0;
         width: 70%;
       }
+      @include mq($md) {
+        top: -10px;
+        height: 70px;
+      }
       } //title_backimg
     .title {
       margin-top: 200px;
+      @include mq($md) {
+        margin-top: 80px;
+      }
     }
     .work_list {
       margin-top: $margin-top + 100px;
@@ -442,7 +568,8 @@ main {
         flex-direction: column;
       }
       @include mq($sm) {
-        margin-top: 20px;
+        margin-top: 0;
+        height: 400px;
       }
       &:nth-of-type(2) .work_list_txt  {
         transform: translateX(70px);
@@ -463,15 +590,18 @@ main {
         @include mq($md) {
           flex-direction: column-reverse;
         }
+        @include mq($sm) {
+          margin-top: 180px;
+        }
         .work_list_txt {
           @include mq($md) {
-            top: -100px;
+            top: -80px;
           }
         }
         .work_items {
           .work_list_item {
             @include mq($md) {
-              top: -120px;
+              top: -100px;
             }
           }
           .work_list_box {
@@ -497,6 +627,9 @@ main {
         .work_list_title {
           font-size: 2.4rem;
           font-weight: bold;
+          @include mq($md) {
+            font-size: 1.8rem;
+          }
         }
         p {
           padding-top: 5px;
@@ -545,12 +678,22 @@ main {
               opacity: 0.7;
             }
           }
+          @include mq($sm) {
+            font-size: 1.8rem;
+            margin-top: 10px;
+          }
         }
         @include mq($md) {
           width: 80%;
           top: 20px;
-          left: 10%;
+          left: 3%;
           position: absolute;
+        }
+        @include mq($sm) {
+          width: 100%;
+          padding-top: 10px;
+          padding-left: 0;
+          left: 0;
         }
       } //work_list_txt
       .work_items {
@@ -583,8 +726,9 @@ main {
               @include mq($sm) {
                 height: 220px;
                 width: 350px;
-                top: -30px;
-                left: -5%;
+                top: -20px;
+                left: 50%;
+                transform: translateX(-30%);
               }
               img {
                 object-fit: cover;
@@ -689,6 +833,9 @@ main {
         }
       } //work_items
     } //work_list
+    @include mq($md) {
+      margin-bottom: 50px;
+    }
   } //section work
 
   /**************************************************
@@ -702,6 +849,9 @@ main {
     @include mq($md) {
       height: 2100px;
       }
+    @include mq($md) {
+      height: 1950px;
+      }
     .title_backimg {
       position: absolute;
       top: -5%;
@@ -713,11 +863,15 @@ main {
       @include mq($lg) {
         left: 2%;
         width: calc(50vw + 46%);
-        }
-        @include mq($md) {
-          right: 0;
-          width: calc(50vw + 30%);
-          }
+      }
+      @include mq($md) {
+        right: 0;
+        width: calc(50vw + 30%);
+      }
+      @include mq($sm) {
+        height: 70px;
+        top: -10px;
+      }
     } //title_backimg
     .skill_lists {
       position: relative;
@@ -819,6 +973,12 @@ main {
           color: $sub-color;
           font-weight: bold;
           border-radius: 80px / 4px;
+          @include mq($md) {
+            font-size: 6rem;
+          }
+          @include mq($sm) {
+            top: -28%;
+          }
         }
         &::after {
           content: "";
@@ -831,12 +991,18 @@ main {
           box-shadow: 0 40px 15px rgba(0, 0, 0, .5);
           background-color: transparent;
           border-radius: 80px / 4px;
+          @include mq($sm) {
+            display: none;
+          }
         }
         h2 {
           margin-top: 30px;
           font-size: 1.8rem;
           font-weight: bold;
           text-align: center;
+          @include mq($sm) {
+            margin-top: 10px;
+          }
         }
         p {
           margin-top: 30px;
@@ -845,6 +1011,10 @@ main {
           line-height: 1.6;
           @include mq($md) {
             margin-top: 20px;
+          }
+          @include mq($md) {
+            padding: 0 5px 0;
+            line-height: 1.4;
           }
         }
         &.list1 {
@@ -858,6 +1028,12 @@ main {
             width: 280px;
             left: 7%;
           }
+          @include mq($sm) {
+            height: 220px;
+            width: 240px;
+            top: -50px;
+            left: 10%;
+          }
         }
         &.list2 { 
           height: 280px;
@@ -866,10 +1042,22 @@ main {
           left: 55%;
           &::before {
             content: "02";
+            @include mq($md) {
+              top: -16%;
+            }
+            @include mq($md) {
+              top: -23%;
+            }
           }
           @include mq($md) {
             height: 260px;
             width: 280px;
+          }
+          @include mq($sm) {
+            height: 240px;
+            width: 260px;
+            top: 180px;
+            left: 45%;
           }
         }
         &.list3 {
@@ -880,11 +1068,23 @@ main {
           &::before {
             content: "03";
             top: -23%;
+            @include mq($md) {
+              top: -14%;
+            }
+            @include mq($sm) {
+              top: -20%;
+            }
           }
           @include mq($md) {
             width: 360px;
             top: 420px;
-            left: 28%;
+            left: 25%;
+          }
+          @include mq($sm) {
+            height: 280px;
+            width: 300px;
+            top: 450px;
+            left: 10%;
           }
         }
         &.list4 {
@@ -895,11 +1095,23 @@ main {
           &::before {
             content: "04";
             top: -23%;
+            @include mq($md) {
+              top: -14%;
+            }
+            @include mq($sm) {
+              top: -20%;
+            }
           }
           @include mq($md) {
             width: 360px;
-            top: 920px;
-            left: 28%;
+            top: 900px;
+            left: 25%;
+          }
+          @include mq($sm) {
+            height: 280px;
+            width: 300px;
+            top: 760px;
+            left: 38%;
           }
         }
         &.list5 {
@@ -910,15 +1122,30 @@ main {
           &::before {
             content: "05";
             top: -23%;
+            @include mq($md) {
+              top: -14%;
+            }
+            @include mq($md) {
+              top: -20%;
+            }
           }
           @include mq($md) {
             width: 360px;
             top: 1420px;
-            left: 28%;
+            left: 25%;
+          }
+          @include mq($sm) {
+            height: 280px;
+            width: 300px;
+            top: 1380px;
+            left: 10%;
           }
         }
         @include mq($md) {
           background-color: $main-color;
+        }
+        @include mq($sm) {
+          padding: 30px 40px;
         }
       } //skill_list
     } //skill_lists
@@ -953,6 +1180,10 @@ main {
           width: 700px;
           left: 5%;
         }
+        @include mq($sm) {
+          width: 300px;
+          left: 5%;
+        }
       }
     }
     .service_lists {
@@ -975,28 +1206,30 @@ main {
         opacity: 0;
         visibility: hidden;
         transition: 1s;
-        @include mq($md) {
-          left: 10%;
-          width: 80%;
-          padding:0;
-        }
-        &:nth-of-type(2) .service_cotent {
+        &:nth-of-type(2) .service_content {
           flex-direction: row-reverse;
+          @include mq($sm) {
+            flex-direction: column;
+          }
         }
         h2 {
           text-align: center;
           padding: 20px 20px 10px;
           font-size: 3rem;
           font-weight: bold;
+          @include mq($sm) {
+            font-size: 2.2rem;
+            padding: 20px 10px;
+          }
         }
-        .service_cotent {
+        .service_content {
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 30px;
           padding: 20px;
           height: 80%;
-          .service_cotent_img {
+          .service_content_img {
             width: 45%;
             img {
               display: block;
@@ -1004,14 +1237,25 @@ main {
               box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
               border-radius: 10px;
             }
+            @include mq($sm) {
+              width: 70%;
+            }
           }
-          .service_cotent_txt {
+          .service_content_txt {
             width: 55%;
             p {
               line-height: 1.8;
             }
+            @include mq($sm) {
+              width: 90%;
+            }
           }
-        }
+          @include mq($sm) {
+            flex-direction: column;
+            height: 100%;
+            padding: 10px;
+          }
+        } //service_content
         .service_other_txt {
           padding: 0 20px;
           h3 {
@@ -1069,11 +1313,30 @@ main {
             width: 90%;
             &:nth-of-type(2) {
               top: 36%;
+              @include mq($md) {
+                top: 40%;
+              }
             }
             &:nth-of-type(3) {
               top: 69%;
             }
+            @include mq($sm) {
+              height: 600px;
+            }
           }
+        }
+        @include mq($md) {
+          left: 10%;
+          width: 80%;
+          padding:0;
+        }
+        @include mq($sm) {
+          width: 300px;
+          left: 5%;
+        }
+        @include mq($sm) {
+          margin-top: 0;
+          height: 600px;
         }
       } //service_list
     } //service_lists
@@ -1151,11 +1414,17 @@ main {
           transition: .5s;
           font-size: 1.4rem;
           border-radius: 5px;
+          @include mq($sm) {
+            width: 30%;
+          }
           &:hover {
             opacity: 0.7;
             transform: translateY(-5px);
           }
         }
+      }
+      @include mq($sm) {
+        width: 100%;
       }
     }
     @include mq($md) {
@@ -1172,6 +1441,9 @@ main {
     .comment_video {
       width: 68%;
       opacity: 0.6;
+    }
+    @include mq($md) {
+      padding-bottom: 0;
     }
   } //comment
 } //main
