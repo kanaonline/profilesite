@@ -10,7 +10,7 @@
  $lg: 1280px;
  $md: 1000px;
  $sm: 767px;
- $xs: 400px;
+ $xs: 380px;
 
 //その他の変数
 $margin-top: 100px;
@@ -19,6 +19,15 @@ $main-color: rgb(255, 182, 193);
 $main-backcolor: rgba(255, 182, 193, 0.5); 
 $sub-color: rgb(216, 191, 216);
 $sub-backcolor: rgb(216, 191, 216,0.7);
+
+
+/***************************************************
+
+
+　共通
+
+
+*****************************************************/
 
 *,*::before,*::after {
   box-sizing: border-box;
@@ -100,25 +109,37 @@ img {
         }
       } //border_anim
       @include mq($md) {
-        left: 28%;
+        left: 20%;
+      }
+      @include mq($sm) {
+        left: 35%;
       }
     } //after
     &.skill_t::after {
       left: 20%;
       @include mq($md) {
-        left: 25%;
+        left: 20%;
+      }
+      @include mq($sm) {
+        left: 35%;
       }
     }
     &.service_t::after {
       left: 30.2%;
       @include mq($md) {
-        left: 35%;
+        left: 30%;
+      }
+      @include mq($sm) {
+        left: 65%;
       }
     }
     &.contact_t::after {
       left: 30%;
       @include mq($md) {
-        left: 45%;
+        left: 33%;
+      }
+      @include mq($sm) {
+        left: 62%;
       }
     }
   } //.scroll_animation.show
@@ -147,6 +168,10 @@ img {
   }
   @include mq($md) {
     font-size: 4rem;
+  }
+  @include mq($xs) {
+    font-size: 3rem;
+    padding-left: 0;
   }
 } //.title
 
@@ -268,6 +293,9 @@ header {
         @include mq($sm) {
           font-size: 3.7rem;
         }
+        @include mq($xs) {
+          font-size: 2.5rem;
+        }
       } //header_txt h1
     } //header_txt
     .header_scroll {
@@ -324,6 +352,9 @@ header {
       }
       @include mq($sm) {
         font-size: 1.2rem;
+      }
+      @include mq($xs) {
+        font-size: 1rem;
       }
     } //header_scroll
   } //header_open
@@ -552,7 +583,7 @@ main {
     .title {
       margin-top: 200px;
       @include mq($md) {
-        margin-top: 80px;
+        margin-top: 30px;
       }
     }
     .work_list {
@@ -563,13 +594,15 @@ main {
       font-family: 'Noto Serif JP', serif;
       height: 400px;
       @include mq($md) {
-        margin-top: 50px;
+        margin-top: 0;
         height: 700px;
         flex-direction: column;
       }
       @include mq($sm) {
-        margin-top: 0;
-        height: 400px;
+        height: 370px;
+      }
+      @include mq($xs) {
+        height: 320px;
       }
       &:nth-of-type(2) .work_list_txt  {
         transform: translateX(70px);
@@ -591,7 +624,7 @@ main {
           flex-direction: column-reverse;
         }
         @include mq($sm) {
-          margin-top: 180px;
+          margin-top: 30%;
         }
         .work_list_txt {
           @include mq($md) {
@@ -602,6 +635,9 @@ main {
           .work_list_item {
             @include mq($md) {
               top: -100px;
+            }
+            @include mq($xs) {
+              top: -90px;
             }
           }
           .work_list_box {
@@ -630,11 +666,21 @@ main {
           @include mq($md) {
             font-size: 1.8rem;
           }
+          span {
+            @include mq($xs) {
+              font-size: 1rem;
+            }
+          }
         }
         p {
           padding-top: 5px;
           padding-left: 30px;
           font-size: 1.6rem;
+          .br-none {
+            @include mq($xs) {
+              display: none;
+            }
+          }
         }
         .work_list_link {
           margin-top: 30px;
@@ -709,7 +755,7 @@ main {
               top: 0;
               left: 15%;
               position: absolute;
-              display: inline-block;
+              display: block;
               border: 1px solid #ccc;
               padding: 10px;
               width: 80%;
@@ -721,23 +767,33 @@ main {
                 height: 340px;
                 width: 550px;
                 top: -30px;
-                left: 30%;
+                left: 40%;
+                right: 50%;
+                margin: auto;
               }
               @include mq($sm) {
-                height: 220px;
-                width: 350px;
+                height: 100%;
+                width: 120%;
                 top: -20px;
-                left: 50%;
-                transform: translateX(-30%);
+                left: 20%;
+                right: 0;
+                margin: auto;
+                background-color:transparent;
+                border: 0;
+              }
+              @include mq($xs) {
+                top: 0;
+                left: 10%;
+                width: 130%;
               }
               img {
                 object-fit: cover;
               }
             }
             @include mq($md) {
-              left: 5%;
               z-index: 3;
             }
+
           } //work_list_item
           .work_list_item.item1 {
             position: relative;
@@ -774,6 +830,9 @@ main {
               }
               @include mq($md) {
                 background-color: $sub-color;
+              }
+              @include mq($sm) {
+                display: none;
               }
             }
             &:hover {
@@ -813,7 +872,9 @@ main {
           box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
           @include mq($md) {
             top: -30px;
-            left: 200px;
+            left: 40%;
+            right: 50%;
+            margin: auto;
             height: 350px;
           }
           @include mq($sm) {
@@ -828,13 +889,21 @@ main {
           box-shadow: rgb(16, 1, 75) 0px 20px 30px -10px;
           @include mq($md) {
             top: -30px;
-            left: 220px;
+            left: 40%;
+            right: 50%;
+            margin: auto;
           }
         }
       } //work_items
+      @include mq($sm) {
+        width: 100%;
+      }
     } //work_list
     @include mq($md) {
-      margin-bottom: 50px;
+      margin-bottom: 10%;
+    }
+    @include mq($xs) {
+      margin-bottom: 0;
     }
   } //section work
 
@@ -849,9 +918,12 @@ main {
     @include mq($md) {
       height: 2100px;
       }
-    @include mq($md) {
-      height: 1950px;
+    @include mq($sm) {
+      height: 1800px;
       }
+    @include mq($sm) {
+      height: 1850px;
+    }
     .title_backimg {
       position: absolute;
       top: -5%;
@@ -892,9 +964,8 @@ main {
         background-color: $main-backcolor;
         border-radius: 50%;
         box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, .2);
-        transform: translateY(50px);
         opacity: 0;
-        transform: scale(0.5);
+        transform: translateY(50px) scale(0.5);
         visibility: hidden;
         transition: 1.5s;
         &:nth-of-type(odd) {
@@ -921,16 +992,15 @@ main {
             transition-delay: 0.4s;
           }
           &.list3 {
-            animation-delay: 4.5s;
+            animation-delay: 3s;
             transition-delay: 0.6s;
-
           }
           &.list4 {
-            animation-delay: 6.5s;
+            animation-delay: 4.5s;
             transition-delay: 0.8s;
           }
           &.list5 {
-            animation-delay: 8.5s;
+            animation-delay: 6s;
             transition-delay: 1s;
           }
         }
@@ -974,6 +1044,7 @@ main {
           font-weight: bold;
           border-radius: 80px / 4px;
           @include mq($md) {
+            top: -23%;
             font-size: 6rem;
           }
           @include mq($sm) {
@@ -1012,9 +1083,12 @@ main {
           @include mq($md) {
             margin-top: 20px;
           }
-          @include mq($md) {
+          @include mq($sm) {
             padding: 0 5px 0;
             line-height: 1.4;
+          }
+          @include mq($xs) {
+            line-height: 1.6;
           }
         }
         &.list1 {
@@ -1026,38 +1100,55 @@ main {
           @include mq($md) {
             height: 260px;
             width: 280px;
-            left: 7%;
+            left: 5%;
+            margin: auto;
           }
           @include mq($sm) {
             height: 220px;
             width: 240px;
-            top: -50px;
-            left: 10%;
+            top: -20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+          @include mq($xs) {
+            height: 180px;
           }
         }
         &.list2 { 
           height: 280px;
           width: 30%;
           top: 50%;
-          left: 55%;
+          left: 60%;
+          margin: auto;
           &::before {
             content: "02";
             @include mq($md) {
-              top: -16%;
-            }
-            @include mq($md) {
               top: -23%;
+            }
+            @include mq($sm) {
+              top: -25%;
+            }
+            @include mq($xs) {
+              top: -28%;
             }
           }
           @include mq($md) {
             height: 260px;
             width: 280px;
+            left: 59%;
           }
           @include mq($sm) {
             height: 240px;
             width: 260px;
-            top: 180px;
-            left: 45%;
+            top: 280px;
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
+          @include mq($xs) {
+            height: 200px;
+            width: 240px;
           }
         }
         &.list3 {
@@ -1069,76 +1160,102 @@ main {
             content: "03";
             top: -23%;
             @include mq($md) {
-              top: -14%;
+              top: -18%;
             }
             @include mq($sm) {
-              top: -20%;
+              top: -21%;
             }
+          }
+          @include mq($lg) {
+            left: -3%;
           }
           @include mq($md) {
             width: 360px;
-            top: 420px;
-            left: 25%;
+            top: 400px;
+            left: 0;
+            right: 0;
+            margin: auto;
           }
           @include mq($sm) {
             height: 280px;
             width: 300px;
-            top: 450px;
-            left: 10%;
+            top: 600px;
+          }
+          @include mq($xs) {
+            height: 270px;
+            width: 240px;
+            top: 600px;
           }
         }
         &.list4 {
           height: 330px;
           width: 35%;
           top: 400px;
-          left: 32%;
+          left: 0;
+          right: 0;
+          margin: auto;
           &::before {
             content: "04";
             top: -23%;
             @include mq($md) {
-              top: -14%;
+              top: -18%;
             }
             @include mq($sm) {
-              top: -20%;
+              top: -21%;
             }
           }
           @include mq($md) {
             width: 360px;
             top: 900px;
-            left: 25%;
+            left: 0;
+            right: 0;
+            margin: auto;
           }
           @include mq($sm) {
             height: 280px;
             width: 300px;
-            top: 760px;
-            left: 38%;
+            top: 960px;
+          }
+          @include mq($xs) {
+            height: 270px;
+            width: 240px;
+            top: 980px;
           }
         }
         &.list5 {
           height: 330px;
           width: 35%;
           top: 400px;
-          left: 69%;
+          left: 70%;
           &::before {
             content: "05";
             top: -23%;
             @include mq($md) {
-              top: -14%;
+              top: -18%;
             }
-            @include mq($md) {
-              top: -20%;
+            @include mq($sm) {
+              top: -21%;
             }
+          }
+          @include mq($lg) {
+            left: 68%;
           }
           @include mq($md) {
             width: 360px;
-            top: 1420px;
-            left: 25%;
+            top: 1400px;
+            left: 0;
+            right: 0;
+            margin: auto;
           }
           @include mq($sm) {
             height: 280px;
             width: 300px;
-            top: 1380px;
-            left: 10%;
+            top: 1330px;
+          }
+          @include mq($xs) {
+            height: 300px;
+            width: 240px;
+            top: 1360px;
           }
         }
         @include mq($md) {
@@ -1146,6 +1263,10 @@ main {
         }
         @include mq($sm) {
           padding: 30px 40px;
+        }
+        @include mq($xs) {
+          border-radius: 10px;
+          padding: 20px;
         }
       } //skill_list
     } //skill_lists
@@ -1177,12 +1298,11 @@ main {
         visibility: visible;
         transform: translateY(0);
         @include mq($md) {
-          width: 700px;
-          left: 5%;
+          width: 85%;
         }
         @include mq($sm) {
-          width: 300px;
-          left: 5%;
+          width: 75%;
+          left: 10%;
         }
       }
     }
@@ -1212,6 +1332,12 @@ main {
             flex-direction: column;
           }
         }
+        .br-xs {
+          display: none;
+          @include mq($xs) {
+            display: block;
+          }
+        }
         h2 {
           text-align: center;
           padding: 20px 20px 10px;
@@ -1219,7 +1345,10 @@ main {
           font-weight: bold;
           @include mq($sm) {
             font-size: 2.2rem;
-            padding: 20px 10px;
+            padding: 30px 10px 20px;
+          }
+          @include mq($xs) {
+            padding: 20px 10px 10px;
           }
         }
         .service_content {
@@ -1237,14 +1366,14 @@ main {
               box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
               border-radius: 10px;
             }
-            @include mq($sm) {
-              width: 70%;
-            }
           }
           .service_content_txt {
             width: 55%;
             p {
               line-height: 1.8;
+              @include mq($xs) {
+                line-height: 1.6;
+              }
             }
             @include mq($sm) {
               width: 90%;
@@ -1252,7 +1381,7 @@ main {
           }
           @include mq($sm) {
             flex-direction: column;
-            height: 100%;
+            height: auto;
             padding: 10px;
           }
         } //service_content
@@ -1278,10 +1407,16 @@ main {
             }
             &:not(:nth-of-type(1)) {
               margin-top: 10px;
+              @include mq($xs) {
+                margin: 15px 0 5px;
+              }
             }
           }
           p {
             padding-left: 30px;
+            @include mq($xs) {
+              line-height: 1.6;
+            }
           }
         }
         &:nth-of-type(2) {
@@ -1295,7 +1430,7 @@ main {
         }
         &.scroll_animation.show {
           position: fixed;
-          top: 25%;
+          top: 23%;
           left: 20%;
           width: 60%;
           opacity: 1;
@@ -1314,14 +1449,26 @@ main {
             &:nth-of-type(2) {
               top: 36%;
               @include mq($md) {
-                top: 40%;
+                top: 36%;
+              }
+              @include mq($sm) {
+                top: 45%;
               }
             }
             &:nth-of-type(3) {
               top: 69%;
+              @include mq($sm) {
+                top: 88%;
+              }
+              @include mq($xs) {
+                top: 87%;
+              }
             }
             @include mq($sm) {
-              height: 600px;
+              height: 550px;
+            }
+            @include mq($xs) {
+              height: 620px;
             }
           }
         }
@@ -1336,10 +1483,19 @@ main {
         }
         @include mq($sm) {
           margin-top: 0;
-          height: 600px;
+          height: 550px;
+        }
+        @include mq($xs) {
+          height: 550px;
         }
       } //service_list
     } //service_lists
+    @include mq($sm) {
+        padding-bottom: 250px;
+      }
+    @include mq($xs) {
+      padding-bottom: 450px;
+    }
   } //service
 
   /**************************************************
@@ -1355,6 +1511,9 @@ main {
       visibility: hidden;
       transform: translateY(-250px);
       transition: 1.5s;
+      @include mq($lg) {
+        transform: translateY(-350px);
+      }
       @include mq($md) {
         width: 80%;
       }
@@ -1430,6 +1589,9 @@ main {
     @include mq($md) {
       margin-bottom: 50px;
     }
+    @include mq($xs) {
+      margin-top: 50px;
+    }
   } //contact
   /**************************************************
 
@@ -1441,6 +1603,9 @@ main {
     .comment_video {
       width: 68%;
       opacity: 0.6;
+      @include mq($xs) {
+        width: 100%;
+      }
     }
     @include mq($md) {
       padding-bottom: 0;
@@ -1474,7 +1639,7 @@ footer {
 
 ***************************************************/
 
-#cursor{
+#cursor {
   transform: translate(0,0);
   pointer-events: none;
   position: fixed;
