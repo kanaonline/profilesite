@@ -195,28 +195,24 @@ for (let i = 0; i < linkElem.length; i++) {
 
 
 
-/********************************************************
 
 
-  スマホ・タブレットのhover無効
 
 
-************************************?*******************/
-var touch = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-
-if(touch) {
-  try {
-    for (var si in document.styleSheets) {
-      var styleSheet = document.styleSheets[si];
-      if (!styleSheet.rules) continue;
-
-      for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
-        if (!styleSheet.rules[ri].selectorText) continue;
-
-        if (styleSheet.rules[ri].selectorText.match(':hover')) {
-          styleSheet.deleteRule(ri);
+if ('ontouchstart' in document.documentElement) {
+  for (var sheetI = document.styleSheets.length - 1; sheetI >= 0; sheetI--) {
+    var sheet = document.styleSheets[sheetI];
+    if (sheet.cssRules) {
+      for (var ruleI = sheet.cssRules.length - 1; ruleI >= 0; ruleI--) {
+        var rule = sheet.cssRules[ruleI];
+        
+        if (rule.selectorText) {
+          rule.selectorText = rule.selectorText.replace(':hover', ':active');
         }
       }
     }
-  } catch (ex) {}
-};
+  }
+}
+
+
+
