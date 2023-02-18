@@ -1968,17 +1968,16 @@ footer small {
   left: -7px;
   width: 16px;
   height: 16px;
-  background: rgba(255, 182, 193, 0.5);
+  background-color: rgba(255, 182, 193, 0.5);
   border-radius: 50%;
   z-index: 999;
   transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
 }
 #cursor.hov_ {
-  top: -12px;
-  left: -12px;
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 182, 193, 0.5);
+  top: -18px;
+  left: -18px;
+  width: 40px;
+  height: 40px;
 }
 @media screen and (max-width: 1000px) {
   #cursor {

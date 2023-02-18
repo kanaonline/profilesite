@@ -1682,16 +1682,15 @@ footer {
   left: -7px;   //座標調節（カーソル位置と円の中心を合わせる）
   width: 16px;   //カーソルの直径
   height: 16px;  //カーソルの直径
-  background: $main-backcolor;
+  background-color: $main-backcolor;
   border-radius: 50%;
   z-index: 999;
   transition: width .3s, height .3s, top .3s, left .3s;
   &.hov_{
-    top: -12px;    //大きくなった分の座標調節
-    left: -12px;   //大きくなった分の座標調節
-    width: 32px;   //カーソルの直径
-    height: 32px;  //カーソルの直径
-    background: $main-backcolor;
+    top: -18px;    //大きくなった分の座標調節
+    left: -18px;   //大きくなった分の座標調節
+    width: 40px;   //カーソルの直径
+    height: 40px;  //カーソルの直径
   }
   @include mq($md) {
     display: none;
