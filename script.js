@@ -104,7 +104,6 @@ document.addEventListener("scroll", () => {
 
 
 
-
 /********************************************************
 
 
@@ -133,6 +132,7 @@ window.addEventListener('scroll',() => {
   }
   beforeScrollValue = window.scrollY;
 });
+
 
 
 /**************************************************
@@ -195,9 +195,13 @@ for (let i = 0; i < linkElem.length; i++) {
 
 
 
+/********************************************************
 
 
+  スマホ・タブレットhover無効
 
+
+**********************************************************/
 
 if ('ontouchstart' in document.documentElement) {
   for (var sheetI = document.styleSheets.length - 1; sheetI >= 0; sheetI--) {
