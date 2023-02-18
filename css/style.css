@@ -79,7 +79,7 @@ img {
   background: #777;
   height: 1px;
   top: 50%;
-  left: 22%;
+  left: 200px;
   -webkit-animation: border_anim 3s linear forwards;
           animation: border_anim 3s linear forwards;
 }
@@ -88,7 +88,7 @@ img {
     width: 0%;
   }
   100% {
-    width: 70%;
+    width: 65%;
   }
 }
 @keyframes border_anim {
@@ -96,56 +96,56 @@ img {
     width: 0%;
   }
   100% {
-    width: 70%;
+    width: 65%;
   }
 }
 @media screen and (max-width: 1000px) {
   .title.scroll_animation.show::after {
-    left: 20%;
+    left: 130px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 380px) {
   .title.scroll_animation.show::after {
-    left: 35%;
+    left: 100px;
   }
 }
 .title.scroll_animation.show.skill_t::after {
-  left: 20%;
+  left: 200px;
 }
 @media screen and (max-width: 1000px) {
   .title.scroll_animation.show.skill_t::after {
-    left: 20%;
+    left: 130px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 380px) {
   .title.scroll_animation.show.skill_t::after {
-    left: 35%;
+    left: 90px;
   }
 }
 .title.scroll_animation.show.service_t::after {
-  left: 30.2%;
+  left: 250px;
 }
 @media screen and (max-width: 1000px) {
   .title.scroll_animation.show.service_t::after {
-    left: 30%;
+    left: 180px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 380px) {
   .title.scroll_animation.show.service_t::after {
-    left: 65%;
+    left: 120px;
   }
 }
 .title.scroll_animation.show.contact_t::after {
-  left: 30%;
+  left: 270px;
 }
 @media screen and (max-width: 1000px) {
   .title.scroll_animation.show.contact_t::after {
-    left: 33%;
+    left: 180px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 380px) {
   .title.scroll_animation.show.contact_t::after {
-    left: 62%;
+    left: 130px;
   }
 }
 .title::before {
@@ -415,7 +415,7 @@ main {
   padding-top: 100px;
   /*--------------------------------
 
-     mask
+     mask・ハンバーガーメニューの内容
 
   -----------------------------------*/
   /**************************************************
@@ -478,7 +478,6 @@ main .main_top.inActive {
 }
 main .main_top .main_top_logo {
   width: 100px;
-  height: 100%;
   transition: 0.5s;
 }
 main .main_top .main_top_logo a {
@@ -490,11 +489,6 @@ main .main_top .main_top_logo a {
 main .main_top .main_top_logo a:hover {
   transform: translateY(-2px) scale(1.1);
   opacity: 0.7;
-}
-@media screen and (max-width: 767px) {
-  main .main_top .main_top_logo {
-    width: 60px;
-  }
 }
 main .main_top .main_top_menu_list {
   display: flex;
@@ -525,106 +519,94 @@ main .main_top .main_menu_sm {
 }
 @media screen and (max-width: 767px) {
   main .main_top .main_menu_sm {
-    position: relative;
+    position: fixed;
     display: block;
     width: 50px;
     height: 50px;
-    right: 10px;
-    transition: 0.3s;
+    right: 50px;
+    top: 20px;
   }
-  main .main_top .main_menu_sm:hover {
-    background-color: #fff;
-  }
-  main .main_top .main_menu_sm.active {
-    transform: rotate(90deg);
-  }
-  main .main_top .main_menu_sm.active .main_top_menuButton_list:nth-of-type(2) {
-    opacity: 0;
-  }
-  main .main_top .main_menu_sm.active .main_top_menuButton_list:nth-of-type(1) {
-    transform: rotate(45deg) translate(-50%, 0);
-    transform-origin: 0% 50%;
-  }
-  main .main_top .main_menu_sm.active .main_top_menuButton_list:nth-of-type(3) {
-    transform: rotate(-45deg) translate(-50%, 0);
-    transform-origin: 0% 50%;
-  }
-  main .main_top .main_menu_sm.active:hover {
-    opacity: 1;
-  }
-  main .main_top .main_menu_sm .main_top_menuButton_list {
-    height: 1px;
-    width: 40px;
-    background-color: #333;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    transition: all 0.5s;
-  }
-  main .main_top .main_menu_sm .main_top_menuButton_list:nth-of-type(1) {
-    transform: translate(-50%, -10px);
-  }
-  main .main_top .main_menu_sm .main_top_menuButton_list:nth-of-type(3) {
-    transform: translate(-50%, 10px);
-  }
+}
+main .main_top .main_menu_sm .main_top_menuButton_list {
+  height: 1px;
+  width: 50px;
+  background-color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: all 0.5s;
+}
+main .main_top .main_menu_sm .main_top_menuButton_list:nth-of-type(1) {
+  transform: translate(-50%, -15px);
+}
+main .main_top .main_menu_sm .main_top_menuButton_list:nth-of-type(3) {
+  transform: translate(-50%, 15px);
+}
+main .main_top .main_menu_sm.active {
+  transform: rotate(90deg);
+}
+main .main_top .main_menu_sm.active .main_top_menuButton_list:nth-of-type(2) {
+  opacity: 0;
+}
+main .main_top .main_menu_sm.active .main_top_menuButton_list:nth-of-type(1) {
+  transform: rotate(45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
+}
+main .main_top .main_menu_sm.active .main_top_menuButton_list:nth-of-type(3) {
+  transform: rotate(-45deg) translate(-50%, 0);
+  transform-origin: 0% 50%;
 }
 main .menuButton_mask {
   position: fixed;
-  height: 500px;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
   visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
+  opacity: 1;
+  z-index: 30;
+  background-color: #ddd;
+  transition: 0.3s;
 }
 main .menuButton_mask.active {
-  opacity: 1;
+  opacity: 0.9;
   visibility: visible;
 }
 main .humbuger_menu {
-  position: absolute;
+  position: fixed;
   top: 0;
-  height: 600px;
+  right: 0;
+  height: 470px;
   width: 100%;
-  padding: 100px 20px;
-  z-index: 3;
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
+  z-index: 50;
   background-color: #fff;
-  transform: translateY(-100px);
+  transform: translateY(-100%);
   transition: 0.5s;
+}
+main .humbuger_menu ul {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 main .humbuger_menu.active {
-  visibility: visible;
-  opacity: 1;
   transform: translateY(0);
 }
+main .humbuger_menu .humbuger_menu_list {
+  width: 100%;
+}
 main .humbuger_menu .humbuger_menu_list a {
-  display: inline-block;
+  display: block;
+  padding: 20px;
   width: 70%;
-  padding: 1.2em 0;
   font-size: 1.8rem;
-  transition: 0.5s;
-  border-bottom: 1px solid #333;
+  margin-left: 10%;
+  border-bottom: 1px solid #ccc;
+  font-family: "Noto Serif JP", serif;
 }
-main .humbuger_menu .humbuger_menu_list a:hover {
-  font-weight: bold;
-  background-color: #333;
-}
-main .humbuger_menu .humbuger_menu_btn {
-  display: inline-block;
-  margin-top: 50px;
-  padding: 0.5em 1.2em;
-  font-size: 2rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  border: 1px solid #333;
-  transition: 0.5s;
-}
-main .humbuger_menu .humbuger_menu_btn:hover {
-  background-color: #333;
+main .humbuger_menu .humbuger_menu_list:nth-of-type(1) a {
+  border-top: 1px solid #ccc;
 }
 main .work {
   margin-bottom: 300px;
@@ -1538,8 +1520,13 @@ main .service .service_t.show {
 }
 @media screen and (max-width: 767px) {
   main .service .service_t.show {
-    width: 75%;
+    width: 80%;
     left: 10%;
+  }
+}
+@media screen and (max-width: 380px) {
+  main .service .service_t.show {
+    width: 70%;
   }
 }
 main .service .service_lists {

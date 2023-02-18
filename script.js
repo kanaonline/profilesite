@@ -69,43 +69,6 @@ header_txt.innerHTML = newText;
 
 
 
-/**************************************************
- * 
- * main三本線メニュー
- * 
-***************************************************/
-const header_top_menuButton = document.getElementById("main_top_menuButton");
-menuButton_mask = document.getElementById("menuButton_mask");
-humbuger_menu =  document.getElementById("humbuger_menu");
-humbuger_menu_lists = document.querySelectorAll('.humbuger_menu_list > a');
-humbuger_menu_btn = document.getElementById("humbuger_menu_btn");
-
-document.addEventListener('DOMContentLoaded',function() {
-header_top_menuButton.addEventListener('click',() => {
-header_top_menuButton.classList.toggle('active');
-menuButton_mask.classList.toggle('active');
-humbuger_menu.classList.toggle('active');
-body.classList.toggle('inactive');
-
-humbuger_menu_lists.forEach(humbuger_menu_list => {
-humbuger_menu_list.addEventListener('click', () => {
-  header_top_menuButton.classList.remove('active');
-  menuButton_mask.classList.remove('active');
-  humbuger_menu.classList.remove('active');
-  body.classList.remove('inactive');
-});
-});
-humbuger_menu_btn.addEventListener('click', () => {
-header_top_menuButton.classList.remove('active');
-menuButton_mask.classList.remove('active');
-humbuger_menu.classList.remove('active');
-humbuger_menu.classList.remove('active');
-body.classList.remove('inactive');
-});
-});
-});
-
-
 /********************************************************
 
 
@@ -172,13 +135,43 @@ window.addEventListener('scroll',() => {
 });
 
 
+/**************************************************
+ * 
+ * main三本線メニュー
+ * 
+***************************************************/
+const main_top_menuButton = document.getElementById("main_top_menuButton");
+      menuButton_mask = document.getElementById("menuButton_mask");
+      humbuger_menu =  document.getElementById("humbuger_menu");
+      humbuger_menu_lists = document.querySelectorAll('.humbuger_menu_list > a');
+
+document.addEventListener('DOMContentLoaded',function() {
+  main_top_menuButton.addEventListener('click',() => {
+    main_top_menuButton.classList.toggle('active');
+    menuButton_mask.classList.toggle('active');
+    humbuger_menu.classList.toggle('active');
+    body.classList.toggle('inactive');
+    
+    humbuger_menu_lists.forEach(humbuger_menu_list => {
+      humbuger_menu_list.addEventListener('click', () => {
+        main_top_menuButton.classList.remove('active');
+        menuButton_mask.classList.remove('active');
+        humbuger_menu.classList.remove('active');
+        body.classList.remove('inactive');
+      });
+    });
+  });
+});
+
+
+
 /********************************************************
 
 
  cursor pointer
 
 
-************************************?*******************/
+**********************************************************/
 
 //準備
 let cursorR = 4;  //カーソルの半径
@@ -198,4 +191,32 @@ for (let i = 0; i < linkElem.length; i++) {
     linkElem[i].addEventListener('mouseout', function (e) {
         cursor.classList.remove('hov_');      
     });
+};
+
+
+
+/********************************************************
+
+
+  スマホ・タブレットのhover無効
+
+
+************************************?*******************/
+var touch = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+if(touch) {
+  try {
+    for (var si in document.styleSheets) {
+      var styleSheet = document.styleSheets[si];
+      if (!styleSheet.rules) continue;
+
+      for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+        if (!styleSheet.rules[ri].selectorText) continue;
+
+        if (styleSheet.rules[ri].selectorText.match(':hover')) {
+          styleSheet.deleteRule(ri);
+        }
+      }
+    }
+  } catch (ex) {}
 };
