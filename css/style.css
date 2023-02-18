@@ -1833,6 +1833,11 @@ main .contact .contact_t {
     width: 80%;
   }
 }
+@media screen and (max-width: 380px) {
+  main .contact .contact_t {
+    transform: translateY(-100px);
+  }
+}
 main .contact .contact_lists {
   width: 70%;
   margin: 50px auto;
