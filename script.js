@@ -189,7 +189,7 @@ for (let i = 0; i < linkElem.length; i++) {
         cursor.classList.add('hov_');
     });
     linkElem[i].addEventListener('mouseout', function (e) {
-        cursor.classList.remove('hov_');      
+        cursor.classList.remove('hov_');
     });
 };
 
