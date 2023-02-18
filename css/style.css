@@ -156,6 +156,11 @@ img {
   font-size: 1.2rem;
   display: block;
 }
+@media screen and (max-width: 380px) {
+  .title::before {
+    top: -10px;
+  }
+}
 .title.skill_t::before {
   content: "技術";
 }
@@ -1581,6 +1586,7 @@ main .service .service_lists .service_list h2 {
 }
 @media screen and (max-width: 380px) {
   main .service .service_lists .service_list h2 {
+    font-size: 1.8rem;
     padding: 20px 10px 10px;
   }
 }
@@ -1610,7 +1616,7 @@ main .service .service_lists .service_list .service_content .service_content_txt
 }
 @media screen and (max-width: 380px) {
   main .service .service_lists .service_list .service_content .service_content_txt p {
-    line-height: 1.6;
+    line-height: 1.4;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1625,6 +1631,11 @@ main .service .service_lists .service_list .service_content .service_content_txt
     padding: 10px;
   }
 }
+@media screen and (max-width: 380px) {
+  main .service .service_lists .service_list .service_content {
+    gap: 10px;
+  }
+}
 main .service .service_lists .service_list .service_other_txt {
   padding: 0 20px;
 }
@@ -1633,6 +1644,11 @@ main .service .service_lists .service_list .service_other_txt h3 {
   font-size: 2rem;
   font-weight: bold;
   padding-left: 30px;
+}
+@media screen and (max-width: 380px) {
+  main .service .service_lists .service_list .service_other_txt h3 {
+    font-size: 1.6rem;
+  }
 }
 main .service .service_lists .service_list .service_other_txt h3::before {
   content: "";
@@ -1647,6 +1663,11 @@ main .service .service_lists .service_list .service_other_txt h3::before {
   height: 20px;
   width: 20px;
 }
+@media screen and (max-width: 380px) {
+  main .service .service_lists .service_list .service_other_txt h3::before {
+    top: -7px;
+  }
+}
 main .service .service_lists .service_list .service_other_txt h3:not(:nth-of-type(1)) {
   margin-top: 10px;
 }
@@ -1660,7 +1681,7 @@ main .service .service_lists .service_list .service_other_txt p {
 }
 @media screen and (max-width: 380px) {
   main .service .service_lists .service_list .service_other_txt p {
-    line-height: 1.6;
+    line-height: 1.4;
   }
 }
 main .service .service_lists .service_list:nth-of-type(2) {
@@ -1685,6 +1706,11 @@ main .service .service_lists .service_list.scroll_animation.show {
   main .service .service_lists .service_list.scroll_animation.show {
     left: 10%;
     width: 80%;
+  }
+}
+@media screen and (max-width: 380px) {
+  main .service .service_lists .service_list.scroll_animation.show {
+    top: 20%;
   }
 }
 main .service .service_lists .service_list.scroll_animation.show.card {
@@ -1727,7 +1753,7 @@ main .service .service_lists .service_list.scroll_animation.show.card:nth-of-typ
 }
 @media screen and (max-width: 380px) {
   main .service .service_lists .service_list.scroll_animation.show.card {
-    height: 620px;
+    top: 20px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -1752,6 +1778,7 @@ main .service .service_lists .service_list.scroll_animation.show.card:nth-of-typ
 @media screen and (max-width: 380px) {
   main .service .service_lists .service_list {
     height: 550px;
+    width: 70%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1798,6 +1825,11 @@ main .contact .contact_lists.scroll_animation.show {
   opacity: 1;
   visibility: visible;
   transform: none;
+}
+@media screen and (max-width: 380px) {
+  main .contact .contact_lists.scroll_animation {
+    transform: translateY(200px);
+  }
 }
 main .contact .contact_lists .contact_list {
   position: relative;

@@ -150,6 +150,9 @@ img {
     color: #777;
     font-size: 1.2rem;
     display: block;
+    @include mq($xs) {
+      top: -10px;
+    }
   } //before
   &.skill_t {
     &::before {
@@ -1339,6 +1342,7 @@ main {
             padding: 30px 10px 20px;
           }
           @include mq($xs) {
+            font-size: 1.8rem;
             padding: 20px 10px 10px;
           }
         }
@@ -1363,7 +1367,7 @@ main {
             p {
               line-height: 1.8;
               @include mq($xs) {
-                line-height: 1.6;
+                line-height: 1.4;
               }
             }
             @include mq($sm) {
@@ -1375,6 +1379,9 @@ main {
             height: auto;
             padding: 10px;
           }
+          @include mq($xs) {
+            gap: 10px;
+          }
         } //service_content
         .service_other_txt {
           padding: 0 20px;
@@ -1383,6 +1390,9 @@ main {
             font-size: 2rem;
             font-weight: bold;
             padding-left: 30px;
+            @include mq($xs) {
+              font-size: 1.6rem;
+            }
             &::before {
               content: '';
               display: block;
@@ -1395,6 +1405,9 @@ main {
               background-size: cover;
               height: 20px;
               width: 20px;
+              @include mq($xs) {
+                top: -7px;
+              }
             }
             &:not(:nth-of-type(1)) {
               margin-top: 10px;
@@ -1406,7 +1419,7 @@ main {
           p {
             padding-left: 30px;
             @include mq($xs) {
-              line-height: 1.6;
+              line-height: 1.4;
             }
           }
         }
@@ -1430,6 +1443,9 @@ main {
           @include mq($md) {
             left: 10%;
             width: 80%;
+          }
+          @include mq($xs) {
+            top: 20%;
           }
           &.card {
             position: absolute;
@@ -1459,7 +1475,7 @@ main {
               height: 550px;
             }
             @include mq($xs) {
-              height: 620px;
+              top: 20px;
             }
           }
         }
@@ -1478,6 +1494,7 @@ main {
         }
         @include mq($xs) {
           height: 550px;
+          width: 70%;
         }
       } //service_list
     } //service_lists
@@ -1521,6 +1538,9 @@ main {
           opacity: 1;
           visibility: visible;
           transform: none;
+        }
+        @include mq($xs) {
+          transform: translateY(200px);
         }
       }
       .contact_list {
