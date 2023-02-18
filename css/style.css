@@ -1795,7 +1795,7 @@ main .service .service_lists .service_list.scroll_animation.show.card:nth-of-typ
 }
 @media screen and (max-width: 380px) {
   main .service {
-    padding-bottom: 100px;
+    padding-bottom: 200px;
   }
 }
 main .contact {
@@ -1818,6 +1818,11 @@ main .contact .contact_t {
     width: 80%;
   }
 }
+@media screen and (max-width: 380px) {
+  main .contact .contact_t {
+    transform: translateY(-450px);
+  }
+}
 main .contact .contact_lists {
   width: 70%;
   margin: 50px auto;
@@ -1832,11 +1837,6 @@ main .contact .contact_lists.scroll_animation.show {
   opacity: 1;
   visibility: visible;
   transform: none;
-}
-@media screen and (max-width: 380px) {
-  main .contact .contact_lists.scroll_animation {
-    transform: translateY(200px);
-  }
 }
 main .contact .contact_lists .contact_list {
   position: relative;
@@ -1895,6 +1895,11 @@ main .contact .contact_lists .contact_list .btbt:hover {
 @media screen and (max-width: 1000px) {
   main .contact {
     margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 380px) {
+  main .contact {
+    margin-top: 0;
   }
 }
 main .comment {
