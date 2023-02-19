@@ -1914,7 +1914,7 @@ main .contact .contact_lists .contact_list .btbt:hover {
 }
 @media screen and (max-width: 380px) {
   main .contact {
-    margin-top: 50px;
+    margin-top: 200px;
   }
 }
 main .comment {
