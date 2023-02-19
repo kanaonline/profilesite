@@ -1619,9 +1619,6 @@ main {
     @include mq($md) {
       margin-bottom: 50px;
     }
-    @include mq($xs) {
-      margin-top: 200px;
-    }
   } //contact
 
   /**************************************************

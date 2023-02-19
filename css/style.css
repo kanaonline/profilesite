@@ -1907,11 +1907,6 @@ main .contact .contact_lists .contact_list .btbt:hover {
     margin-bottom: 50px;
   }
 }
-@media screen and (max-width: 380px) {
-  main .contact {
-    margin-top: 200px;
-  }
-}
 main .comment {
   padding-bottom: 220px;
 }
