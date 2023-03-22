@@ -607,7 +607,12 @@ main {
         height: 370px;
       }
       @include mq($xs) {
-        height: 320px;
+        height: 500px;
+      }
+      &:nth-of-type(2) {
+        @include mq($xs) {
+          height: 320px;
+        }
       }
       &:nth-of-type(2) .work_list_txt  {
         transform: translateX(70px);
