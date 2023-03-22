@@ -684,12 +684,12 @@ main .work .work_list {
 }
 @media screen and (max-width: 767px) {
   main .work .work_list {
-    height: 370px;
+    height: 500px;
   }
 }
-@media screen and (max-width: 380px) {
-  main .work .work_list {
-    height: 500px;
+@media screen and (max-width: 767px) {
+  main .work .work_list:nth-of-type(2) {
+    height: 370px;
   }
 }
 @media screen and (max-width: 380px) {
@@ -735,9 +735,9 @@ main .work .work_list.english {
     top: -100px;
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 767px) {
   main .work .work_list.english .work_items .work_list_item {
-    top: -90px;
+    top: -110px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -912,6 +912,11 @@ main .work .work_list .work_items .work_list_items .work_list_item.item1 {
 }
 main .work .work_list .work_items .work_list_items .work_list_item.item1 img {
   transition: 1s;
+}
+@media screen and (max-width: 767px) {
+  main .work .work_list .work_items .work_list_items .work_list_item.item1 img {
+    padding-top: 40px;
+  }
 }
 main .work .work_list .work_items .work_list_items .work_list_item.item1 .work_list_item_txt {
   position: absolute;
@@ -1275,7 +1280,8 @@ main .skill .skill_lists .skill_list p {
 }
 @media screen and (max-width: 767px) {
   main .skill .skill_lists .skill_list p {
-    padding: 0 5px 0;
+    margin-top: 10px;
+    padding: 0;
     line-height: 1.4;
   }
 }
@@ -1639,6 +1645,11 @@ main .service .service_lists .service_list .service_content .service_content_txt
 main .service .service_lists .service_list .service_content .service_content_txt p {
   line-height: 1.8;
 }
+@media screen and (max-width: 767px) {
+  main .service .service_lists .service_list .service_content .service_content_txt p {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (max-width: 380px) {
   main .service .service_lists .service_list .service_content .service_content_txt p {
     font-size: 1.4rem;
@@ -1703,6 +1714,11 @@ main .service .service_lists .service_list .service_other_txt h3:not(:nth-of-typ
 }
 main .service .service_lists .service_list .service_other_txt p {
   padding-left: 30px;
+}
+@media screen and (max-width: 767px) {
+  main .service .service_lists .service_list .service_other_txt p {
+    font-size: 1.5rem;
+  }
 }
 @media screen and (max-width: 380px) {
   main .service .service_lists .service_list .service_other_txt p {

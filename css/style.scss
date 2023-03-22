@@ -604,20 +604,20 @@ main {
         flex-direction: column;
       }
       @include mq($sm) {
-        height: 370px;
-      }
-      @include mq($xs) {
         height: 500px;
       }
       &:nth-of-type(2) {
+        @include mq($sm) {
+          height: 370px;
+        }
         @include mq($xs) {
           height: 320px;
         }
-      }
-      &:nth-of-type(2) .work_list_txt  {
-        transform: translateX(70px);
-        @include mq($md) {
-          transform: translateX(-70px);
+        .work_list_txt  {
+          transform: translateX(70px);
+          @include mq($md) {
+            transform: translateX(-70px);
+          }
         }
       }
       &.scroll_animation.show .work_list_txt,
@@ -646,8 +646,8 @@ main {
             @include mq($md) {
               top: -100px;
             }
-            @include mq($xs) {
-              top: -90px;
+            @include mq($sm) {
+              top: -110px;
             }
           }
           .work_list_box {
@@ -809,6 +809,9 @@ main {
             position: relative;
             img {
               transition: 1s;
+              @include mq($sm) {
+                padding-top: 40px;
+              }
             }
             .work_list_item_txt {
               position: absolute;
@@ -1096,7 +1099,8 @@ main {
             margin-top: 20px;
           }
           @include mq($sm) {
-            padding: 0 5px 0;
+            margin-top: 10px;
+            padding: 0;
             line-height: 1.4;
           }
           @include mq($xs) {
@@ -1389,6 +1393,9 @@ main {
             width: 55%;
             p {
               line-height: 1.8;
+              @include mq($sm) {
+                font-size: 1.5rem;
+              }
               @include mq($xs) {
                 font-size: 1.4rem;
               }
@@ -1441,6 +1448,9 @@ main {
           }
           p {
             padding-left: 30px;
+            @include mq($sm) {
+              font-size: 1.5rem;
+            }
             @include mq($xs) {
               font-size: 1.4rem;
             }
