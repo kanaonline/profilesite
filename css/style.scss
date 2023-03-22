@@ -1441,8 +1441,8 @@ main {
             }
             &:not(:nth-of-type(1)) {
               margin-top: 10px;
-              @include mq($xs) {
-                margin: 15px 0 5px;
+              @include mq($sm) {
+                margin: 25px 0 5px;
               }
             }
           }
