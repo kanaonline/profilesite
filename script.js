@@ -20,13 +20,13 @@ if (!sessionStorage.getItem('visited')) {
   sessionStorage.setItem('visited', 'first');
   window.addEventListener('load', function () {
     body.classList.add("inactive");
-    setTimeout(loadedPage, 3000);
+    setTimeout(loadedPage, 1000);
     setTimeout(() => {
       header_scroll.classList.add("show");
       body.classList.remove("inactive");
-      }, 13000);
+      }, 11000);
   });
-  setTimeout(loadedPage, 3000);
+  setTimeout(loadedPage, 1000);
 }else {
   loadedPage();
   header_scroll.classList.add("show");
@@ -64,7 +64,7 @@ texts.split("").forEach(text => {
 setTimeout(() => {
   newText = textsArray.join('');
 header_txt.innerHTML = newText;
-  }, 4000);
+  }, 2000);
 
 
 
