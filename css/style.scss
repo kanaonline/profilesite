@@ -212,6 +212,20 @@ img {
   opacity: 1;
   visibility: visible;
   transition: 0.5s;
+  .load-circle {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-top-color: rgba(255, 255, 255, 1);
+    animation: rotate 1s linear infinite;
+  }
+  @keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+  }
 }
 .bl_loading.loaded {
   opacity: 0;
