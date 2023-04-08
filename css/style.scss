@@ -1366,6 +1366,7 @@ main {
 
   ***************************************************/
   .service_t {
+    margin-top: $margin-top;
     position: -webkit-Ssticky;
     position: sticky;
     top: 5%;
@@ -1382,11 +1383,8 @@ main {
     position: -webkit-Ssticky;
     position: sticky;
     font-family: 'Noto Serif JP', serif;
-    top: 15%;
+    top: 5%;
     @include mq($lg) {
-      top: -20%;
-    }
-    @include mq($sm) {
       top: -10%;
     }
     @include mq($xs) {

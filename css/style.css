@@ -1592,6 +1592,7 @@ main .skill .skill_lists .skill_list.list5::before {
   }
 }
 main .service_t {
+  margin-top: 100px;
   position: -webkit-Ssticky;
   position: -webkit-sticky;
   position: sticky;
@@ -1612,14 +1613,9 @@ main .service_list {
   position: -webkit-sticky;
   position: sticky;
   font-family: "Noto Serif JP", serif;
-  top: 15%;
+  top: 5%;
 }
 @media screen and (max-width: 1280px) {
-  main .service_list {
-    top: -20%;
-  }
-}
-@media screen and (max-width: 767px) {
   main .service_list {
     top: -10%;
   }
