@@ -78,10 +78,6 @@ header_txt.innerHTML = newText;
 *********************************************************/
 
 const scroll_animations = document.querySelectorAll(".scroll_animation");
-const service_height = document.querySelector(".service_lists");
-const service_title = document.querySelector(".title.scroll_animation.service_t");
-const service_lists = document.querySelectorAll(".service_list.scroll_animation");
-const cotact_title = document.querySelector(".title.scroll_animation.contact_t");
 
 
 document.addEventListener("scroll", () => {
@@ -91,14 +87,6 @@ document.addEventListener("scroll", () => {
     if(window.innerHeight > getElementDistance) {
       scroll_animation.classList.add("show")
     } 
-    //　contact_section表示したらservice_section postision変更
-    if(cotact_title.classList.contains("show")) {
-      service_height.style.height = "1600px";
-      service_title.style.position = "static";
-      service_lists.forEach(service_list => {
-        service_list.classList.add("card");
-      }); //forEach service
-    }; //if
   }); // forEach scroll
 }); // scroll
 
@@ -122,13 +110,6 @@ window.addEventListener('scroll',() => {
   }else{
     // 上にスクロールした場合の処理
     header_nemu.remove('inActive');
-    if(service_title.classList.contains("show")) {
-      service_height.style.height = "1600px";
-      service_title.style.position = "static";
-      service_lists.forEach(service_list => {
-      service_list.classList.add("card");
-      }); //forEach service
-    }
   }
   beforeScrollValue = window.scrollY;
 });

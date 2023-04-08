@@ -1364,250 +1364,108 @@ main {
 
 
   ***************************************************/
-  .service {
-    margin-top: $margin-top;
-    position: relative;
-    .service_t {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(400px);
-      transition: 2s;
-      @include mq($md) {
-        transform: translateY(500px);
-      }
-      &.show {
-        position: fixed;
-        width: 960px;
-        top: 10%;
-        left: 18%;
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        @include mq($md) {
-          width: 85%;
-        }
-        @include mq($sm) {
-          width: 80%;
-          left: 10%;
-        }
-        @include mq($xs) {
-          width: 70%;
-        }
-      }
-    }
-    .service_lists {
-      position: relative;
-      height: 2500px;
-      .service_list {
-        position: absolute;
-        top: 500px;
-        left: 20%;
-        width: 60%;
-        font-size: 1.6rem;
-        height: 400px;
-        padding: 20px;
-        font-family: 'Noto Serif JP', serif;
-        margin-top: 50px;
-        border-radius: 20px;
-        background-color: rgb(249, 234, 236);
-        box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
-        transform: translateY(100px);
-        opacity: 0;
-        visibility: hidden;
-        transition: 1s;
-        &:nth-of-type(2) .service_content {
-          flex-direction: row-reverse;
-          @include mq($sm) {
-            flex-direction: column;
-          }
-        }
-        .br-xs {
-          display: none;
-          @include mq($xs) {
-            display: block;
-          }
-        }
-        h2 {
+  .service_t {
+    position: -webkit-Ssticky;
+    position: sticky;
+    top: 5%;
+  }
+  .service_list {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: -webkit-Ssticky;
+    position: sticky;
+    font-family: 'Noto Serif JP', serif;
+    top: 20%;
+    .service_list_wrapper {
+      height: 450px;
+      border-radius: 20px;
+      background-color: rgb(249, 234, 236);
+      box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
+      h2 {
           text-align: center;
-          padding: 20px 20px 10px;
+          padding: 50px 20px 40px;
           font-size: 3rem;
           font-weight: bold;
-          @include mq($sm) {
-            font-size: 2.2rem;
-            padding: 30px 10px 20px;
-          }
-          @include mq($xs) {
-            font-size: 1.8rem;
-            padding: 20px 10px 10px;
-          }
-        }
-        .service_content {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 30px;
-          padding: 20px;
-          height: 80%;
-          .service_content_img {
-            width: 45%;
-            img {
+          .br-xs {
+            display: none;
+            @include mq($xs) {
               display: block;
-              object-fit: cover;
-              box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
-              border-radius: 10px;
+            }
+          }
+      }
+      .service_content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+        .service_content_img {
+          width: 45%;
+          img {
+            display: block;
+            object-fit: cover;
+            font-family: 'Noto Serif JP', serif;
+            box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            height: 250px;
+            width: 100%;
             }
           }
           .service_content_txt {
             width: 55%;
             p {
-              line-height: 1.8;
-              @include mq($sm) {
-                font-size: 1.5rem;
-              }
-              @include mq($xs) {
-                font-size: 1.4rem;
-              }
+                line-height: 1.8;
+                font-size: 1.6rem;
             }
-            @include mq($sm) {
-              width: 90%;
-            }
-          }
-          @include mq($sm) {
-            flex-direction: column;
-            height: auto;
-            padding: 10px;
-          }
-          @include mq($xs) {
-            gap: 10px;
           }
         } //service_content
-        .service_other_txt {
-          padding: 0 20px;
-          h3 {
-            position: relative;
-            font-size: 2rem;
-            font-weight: bold;
-            padding-left: 30px;
-            @include mq($xs) {
-              font-size: 1.6rem;
-            }
-            &::before {
-              content: '';
-              display: block;
-              position: absolute;
-              left: 0;
-              top:0;
-              transform: translateY(50%);
-              background-image: url("../img/check.png");
-              background-position: center;
-              background-size: cover;
-              height: 20px;
-              width: 20px;
-              @include mq($xs) {
-                top: -7px;
-              }
-            }
-            &:not(:nth-of-type(1)) {
-              margin-top: 10px;
-              @include mq($sm) {
-                margin: 25px 0 5px;
-              }
-            }
+    }
+  }
+  .service_list_one {
+    z-index: 100;
+  }
+  .service_list_two {
+    z-index: 200;
+  }
+  .service_list_three {
+    z-index: 300;
+    .service_list_wrapper {
+      width: 100%;
+      .service_other_txt {
+        padding: 0 20px;
+        h3 {
+          position: relative;
+          font-size: 2rem;
+          font-weight: bold;
+          padding-left: 30px;
+          margin-top: 20px;
+          &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          top:0;
+          transform: translateY(50%);
+          background-image: url("../img/check.png");
+          background-position: center;
+          background-size: cover;
+          height: 20px;
+          width: 20px;
           }
-          p {
-            padding-left: 30px;
-            @include mq($sm) {
-              font-size: 1.5rem;
-            }
-            @include mq($xs) {
-              font-size: 1.4rem;
-            }
-          }
+          // &:not(:nth-of-type(1)) {
+          //   margin-top: 20px;
+          // }
         }
-        &:nth-of-type(2) {
-          top: 1000px;
-          z-index: 10;
-          background-color: rgb(251, 237, 251);
+        p {
+          padding-left: 30px;
+          font-size: 1.6rem;
         }
-        &:nth-of-type(3) {
-          top: 1500px;
-          z-index: 20;
-        }
-        &.scroll_animation.show {
-          position: fixed;
-          top: 23%;
-          left: 20%;
-          width: 60%;
-          opacity: 1;
-          transform: translateY(0);
-          visibility: visible;
-          @include mq($md) {
-            left: 10%;
-            width: 80%;
-          }
-          @include mq($xs) {
-            top: 20%;
-          }
-          &.card {
-            position: absolute;
-            top: 3%;
-            left: 5%;
-            height: 400px;
-            width: 90%;
-            &:nth-of-type(2) {
-              top: 36%;
-              @include mq($md) {
-                top: 36%;
-              }
-              @include mq($sm) {
-                top: 45%;
-              }
-              @include mq($xs) {
-                top: 40%;
-              }
-            }
-            &:nth-of-type(3) {
-              top: 69%;
-              @include mq($sm) {
-                top: 88%;
-              }
-              @include mq($xs) {
-                top: 79%;
-              }
-            }
-            @include mq($sm) {
-              height: 550px;
-            }
-            @include mq($xs) {
-              top: 20px;
-              height: 500px;
-            }
-          }
-        }
-        @include mq($md) {
-          left: 10%;
-          width: 80%;
-          padding:0;
-        }
-        @include mq($sm) {
-          width: 300px;
-          left: 5%;
-        }
-        @include mq($sm) {
-          margin-top: 0;
-          height: 550px;
-        }
-        @include mq($xs) {
-          height: 500px;
-          width: 70%;
-          font-size: 1.4rem;
-        }
-      } //service_list
-    } //service_lists
-    @include mq($sm) {
-        padding-bottom: 250px;
       }
-  } //service
+    }
+  }
 
   /**************************************************
 
@@ -1617,16 +1475,13 @@ main {
 
   ***************************************************/
   .contact {
-    margin-top: 250px;
+    margin-top: $margin-top;
     margin-bottom: $margin-bottom;
     .contact_t {
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-250px);
+      transform: translateY(50px);
       transition: 1.5s;
-      @include mq($lg) {
-        transform: translateY(-350px);
-      }
       @include mq($md) {
         width: 80%;
       }
@@ -1637,7 +1492,7 @@ main {
       &.scroll_animation {
         opacity: 0;
         visibility: hidden;
-        transform: translateY(100px);
+        transform: translateY(50px);
         transition: 2s;
         &.show {
           opacity: 1;
