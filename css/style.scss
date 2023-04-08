@@ -131,10 +131,10 @@ img {
       left: 250px;
       @include mq($md) {
         left: 180px;
+        width: 50px;
       }
       @include mq($xs) {
-        top: 100px;
-        left: 120px;
+        left: 130px;
       }
     }
     &.contact_t::after {
@@ -1369,8 +1369,8 @@ main {
     position: -webkit-Ssticky;
     position: sticky;
     top: 5%;
-    @include mq($xs) {
-      position: static;
+    @include mq($md) {
+      width: 80%;
     }
   }
   .service_list {
@@ -1399,11 +1399,8 @@ main {
       background-color: rgb(249, 234, 236);
       box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
       @include mq($sm) {
-        height: 520px;
-      }
-      @include mq($xs) {
         height: 640px;
-      } 
+      }
       h2 {
           text-align: center;
           padding: 50px 20px 40px;
@@ -1411,7 +1408,7 @@ main {
           font-weight: bold;
           .br-xs {
             display: none;
-            @include mq($xs) {
+            @include mq($sm) {
               display: block;
             }
           }
@@ -1456,6 +1453,9 @@ main {
             p {
                 line-height: 1.8;
                 font-size: 1.6rem;
+                @include mq($xs) {
+                  font-size: 1.4rem;
+                }
             }
           }
         } //service_content
@@ -1492,13 +1492,13 @@ main {
           height: 20px;
           width: 20px;
           }
-          // &:not(:nth-of-type(1)) {
-          //   margin-top: 20px;
-          // }
         }
         p {
           padding-left: 30px;
           font-size: 1.6rem;
+          @include mq($xs) {
+            font-size: 1.4rem;
+          }
         }
       }
     }

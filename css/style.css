@@ -133,12 +133,12 @@ img {
 @media screen and (max-width: 1000px) {
   .title.scroll_animation.show.service_t::after {
     left: 180px;
+    width: 50px;
   }
 }
 @media screen and (max-width: 380px) {
   .title.scroll_animation.show.service_t::after {
-    top: 100px;
-    left: 120px;
+    left: 130px;
   }
 }
 .title.scroll_animation.show.contact_t::after {
@@ -1597,9 +1597,9 @@ main .service_t {
   position: sticky;
   top: 5%;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 1000px) {
   main .service_t {
-    position: static;
+    width: 80%;
   }
 }
 main .service_list {
@@ -1638,11 +1638,6 @@ main .service_list .service_list_wrapper {
 }
 @media screen and (max-width: 767px) {
   main .service_list .service_list_wrapper {
-    height: 520px;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service_list .service_list_wrapper {
     height: 640px;
   }
 }
@@ -1655,7 +1650,7 @@ main .service_list .service_list_wrapper h2 {
 main .service_list .service_list_wrapper h2 .br-xs {
   display: none;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 767px) {
   main .service_list .service_list_wrapper h2 .br-xs {
     display: block;
   }
@@ -1714,6 +1709,11 @@ main .service_list .service_list_wrapper .service_content .service_content_txt p
   line-height: 1.8;
   font-size: 1.6rem;
 }
+@media screen and (max-width: 380px) {
+  main .service_list .service_list_wrapper .service_content .service_content_txt p {
+    font-size: 1.4rem;
+  }
+}
 main .service_list_one {
   z-index: 100;
 }
@@ -1752,6 +1752,11 @@ main .service_list_three .service_list_wrapper .service_other_txt h3::before {
 main .service_list_three .service_list_wrapper .service_other_txt p {
   padding-left: 30px;
   font-size: 1.6rem;
+}
+@media screen and (max-width: 380px) {
+  main .service_list_three .service_list_wrapper .service_other_txt p {
+    font-size: 1.4rem;
+  }
 }
 main .contact {
   margin-top: 100px;
