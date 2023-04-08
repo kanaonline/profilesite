@@ -1590,168 +1590,94 @@ main .skill .skill_lists .skill_list.list5::before {
     padding: 20px;
   }
 }
-main .service {
-  margin-top: 100px;
-  position: relative;
+main .service_t {
+  position: -webkit-Ssticky;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5%;
 }
-main .service .service_t {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(400px);
-  transition: 2s;
-}
-@media screen and (max-width: 1000px) {
-  main .service .service_t {
-    transform: translateY(500px);
-  }
-}
-main .service .service_t.show {
-  position: fixed;
-  width: 960px;
-  top: 10%;
-  left: 18%;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-@media screen and (max-width: 1000px) {
-  main .service .service_t.show {
-    width: 85%;
-  }
-}
-@media screen and (max-width: 767px) {
-  main .service .service_t.show {
-    width: 80%;
-    left: 10%;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service .service_t.show {
-    width: 70%;
-  }
-}
-main .service .service_lists {
-  position: relative;
-  height: 2500px;
-}
-main .service .service_lists .service_list {
-  position: absolute;
-  top: 500px;
-  left: 20%;
-  width: 60%;
-  font-size: 1.6rem;
-  height: 400px;
-  padding: 20px;
+main .service_list {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: -webkit-Ssticky;
+  position: -webkit-sticky;
+  position: sticky;
   font-family: "Noto Serif JP", serif;
-  margin-top: 50px;
+  top: 20%;
+}
+main .service_list .service_list_wrapper {
+  height: 450px;
   border-radius: 20px;
   background-color: rgb(249, 234, 236);
   box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
-  transform: translateY(100px);
-  opacity: 0;
-  visibility: hidden;
-  transition: 1s;
 }
-main .service .service_lists .service_list:nth-of-type(2) .service_content {
-  flex-direction: row-reverse;
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list:nth-of-type(2) .service_content {
-    flex-direction: column;
-  }
-}
-main .service .service_lists .service_list .br-xs {
-  display: none;
-}
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list .br-xs {
-    display: block;
-  }
-}
-main .service .service_lists .service_list h2 {
+main .service_list .service_list_wrapper h2 {
   text-align: center;
-  padding: 20px 20px 10px;
+  padding: 50px 20px 40px;
   font-size: 3rem;
   font-weight: bold;
 }
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list h2 {
-    font-size: 2.2rem;
-    padding: 30px 10px 20px;
-  }
+main .service_list .service_list_wrapper h2 .br-xs {
+  display: none;
 }
 @media screen and (max-width: 380px) {
-  main .service .service_lists .service_list h2 {
-    font-size: 1.8rem;
-    padding: 20px 10px 10px;
+  main .service_list .service_list_wrapper h2 .br-xs {
+    display: block;
   }
 }
-main .service .service_lists .service_list .service_content {
+main .service_list .service_list_wrapper .service_content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
   padding: 20px;
-  height: 80%;
 }
-main .service .service_lists .service_list .service_content .service_content_img {
+main .service_list .service_list_wrapper .service_content .service_content_img {
   width: 45%;
 }
-main .service .service_lists .service_list .service_content .service_content_img img {
+main .service_list .service_list_wrapper .service_content .service_content_img img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
+  font-family: "Noto Serif JP", serif;
   box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  height: 250px;
+  width: 100%;
 }
-main .service .service_lists .service_list .service_content .service_content_txt {
+main .service_list .service_list_wrapper .service_content .service_content_txt {
   width: 55%;
 }
-main .service .service_lists .service_list .service_content .service_content_txt p {
+main .service_list .service_list_wrapper .service_content .service_content_txt p {
   line-height: 1.8;
+  font-size: 1.6rem;
 }
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list .service_content .service_content_txt p {
-    font-size: 1.5rem;
-  }
+main .service_list_one {
+  z-index: 100;
 }
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list .service_content .service_content_txt p {
-    font-size: 1.4rem;
-  }
+main .service_list_two {
+  z-index: 200;
 }
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list .service_content .service_content_txt {
-    width: 90%;
-  }
+main .service_list_three {
+  z-index: 300;
 }
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list .service_content {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-  }
+main .service_list_three .service_list_wrapper {
+  width: 100%;
 }
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list .service_content {
-    gap: 10px;
-  }
-}
-main .service .service_lists .service_list .service_other_txt {
+main .service_list_three .service_list_wrapper .service_other_txt {
   padding: 0 20px;
 }
-main .service .service_lists .service_list .service_other_txt h3 {
+main .service_list_three .service_list_wrapper .service_other_txt h3 {
   position: relative;
   font-size: 2rem;
   font-weight: bold;
   padding-left: 30px;
+  margin-top: 20px;
 }
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list .service_other_txt h3 {
-    font-size: 1.6rem;
-  }
-}
-main .service .service_lists .service_list .service_other_txt h3::before {
+main .service_list_three .service_list_wrapper .service_other_txt h3::before {
   content: "";
   display: block;
   position: absolute;
@@ -1764,155 +1690,19 @@ main .service .service_lists .service_list .service_other_txt h3::before {
   height: 20px;
   width: 20px;
 }
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list .service_other_txt h3::before {
-    top: -7px;
-  }
-}
-main .service .service_lists .service_list .service_other_txt h3:not(:nth-of-type(1)) {
-  margin-top: 10px;
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list .service_other_txt h3:not(:nth-of-type(1)) {
-    margin: 25px 0 5px;
-  }
-}
-main .service .service_lists .service_list .service_other_txt p {
+main .service_list_three .service_list_wrapper .service_other_txt p {
   padding-left: 30px;
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list .service_other_txt p {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list .service_other_txt p {
-    font-size: 1.4rem;
-  }
-}
-main .service .service_lists .service_list:nth-of-type(2) {
-  top: 1000px;
-  z-index: 10;
-  background-color: rgb(251, 237, 251);
-}
-main .service .service_lists .service_list:nth-of-type(3) {
-  top: 1500px;
-  z-index: 20;
-}
-main .service .service_lists .service_list.scroll_animation.show {
-  position: fixed;
-  top: 23%;
-  left: 20%;
-  width: 60%;
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-}
-@media screen and (max-width: 1000px) {
-  main .service .service_lists .service_list.scroll_animation.show {
-    left: 10%;
-    width: 80%;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list.scroll_animation.show {
-    top: 20%;
-  }
-}
-main .service .service_lists .service_list.scroll_animation.show.card {
-  position: absolute;
-  top: 3%;
-  left: 5%;
-  height: 400px;
-  width: 90%;
-}
-main .service .service_lists .service_list.scroll_animation.show.card:nth-of-type(2) {
-  top: 36%;
-}
-@media screen and (max-width: 1000px) {
-  main .service .service_lists .service_list.scroll_animation.show.card:nth-of-type(2) {
-    top: 36%;
-  }
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list.scroll_animation.show.card:nth-of-type(2) {
-    top: 45%;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list.scroll_animation.show.card:nth-of-type(2) {
-    top: 40%;
-  }
-}
-main .service .service_lists .service_list.scroll_animation.show.card:nth-of-type(3) {
-  top: 69%;
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list.scroll_animation.show.card:nth-of-type(3) {
-    top: 88%;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list.scroll_animation.show.card:nth-of-type(3) {
-    top: 79%;
-  }
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list.scroll_animation.show.card {
-    height: 550px;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list.scroll_animation.show.card {
-    top: 20px;
-    height: 500px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  main .service .service_lists .service_list {
-    left: 10%;
-    width: 80%;
-    padding: 0;
-  }
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list {
-    width: 300px;
-    left: 5%;
-  }
-}
-@media screen and (max-width: 767px) {
-  main .service .service_lists .service_list {
-    margin-top: 0;
-    height: 550px;
-  }
-}
-@media screen and (max-width: 380px) {
-  main .service .service_lists .service_list {
-    height: 500px;
-    width: 70%;
-    font-size: 1.4rem;
-  }
-}
-@media screen and (max-width: 767px) {
-  main .service {
-    padding-bottom: 250px;
-  }
+  font-size: 1.6rem;
 }
 main .contact {
-  margin-top: 250px;
+  margin-top: 100px;
   margin-bottom: 200px;
 }
 main .contact .contact_t {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-250px);
+  transform: translateY(50px);
   transition: 1.5s;
-}
-@media screen and (max-width: 1280px) {
-  main .contact .contact_t {
-    transform: translateY(-350px);
-  }
 }
 @media screen and (max-width: 1000px) {
   main .contact .contact_t {
@@ -1926,7 +1716,7 @@ main .contact .contact_lists {
 main .contact .contact_lists.scroll_animation {
   opacity: 0;
   visibility: hidden;
-  transform: translateY(100px);
+  transform: translateY(50px);
   transition: 2s;
 }
 main .contact .contact_lists.scroll_animation.show {
