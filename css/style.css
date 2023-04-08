@@ -137,6 +137,7 @@ img {
 }
 @media screen and (max-width: 380px) {
   .title.scroll_animation.show.service_t::after {
+    top: 100px;
     left: 120px;
   }
 }
@@ -1596,9 +1597,14 @@ main .service_t {
   position: sticky;
   top: 5%;
 }
+@media screen and (max-width: 380px) {
+  main .service_t {
+    position: static;
+  }
+}
 main .service_list {
   width: 100%;
-  height: 600px;
+  height: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1606,13 +1612,39 @@ main .service_list {
   position: -webkit-sticky;
   position: sticky;
   font-family: "Noto Serif JP", serif;
-  top: 20%;
+  top: 15%;
+}
+@media screen and (max-width: 1280px) {
+  main .service_list {
+    top: -20%;
+  }
+}
+@media screen and (max-width: 767px) {
+  main .service_list {
+    top: -10%;
+  }
+}
+@media screen and (max-width: 380px) {
+  main .service_list {
+    position: static;
+    height: 700px;
+  }
 }
 main .service_list .service_list_wrapper {
   height: 450px;
   border-radius: 20px;
   background-color: rgb(249, 234, 236);
   box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
+}
+@media screen and (max-width: 767px) {
+  main .service_list .service_list_wrapper {
+    height: 520px;
+  }
+}
+@media screen and (max-width: 380px) {
+  main .service_list .service_list_wrapper {
+    height: 640px;
+  }
 }
 main .service_list .service_list_wrapper h2 {
   text-align: center;
@@ -1628,6 +1660,12 @@ main .service_list .service_list_wrapper h2 .br-xs {
     display: block;
   }
 }
+@media screen and (max-width: 767px) {
+  main .service_list .service_list_wrapper h2 {
+    font-size: 2.4 rem;
+    padding: 20px 10px 10px;
+  }
+}
 main .service_list .service_list_wrapper .service_content {
   display: flex;
   justify-content: center;
@@ -1635,8 +1673,19 @@ main .service_list .service_list_wrapper .service_content {
   gap: 30px;
   padding: 20px;
 }
+@media screen and (max-width: 767px) {
+  main .service_list .service_list_wrapper .service_content {
+    display: flex;
+    flex-direction: column;
+  }
+}
 main .service_list .service_list_wrapper .service_content .service_content_img {
   width: 45%;
+}
+@media screen and (max-width: 767px) {
+  main .service_list .service_list_wrapper .service_content .service_content_img {
+    width: 70%;
+  }
 }
 main .service_list .service_list_wrapper .service_content .service_content_img img {
   display: block;
@@ -1648,8 +1697,18 @@ main .service_list .service_list_wrapper .service_content .service_content_img i
   height: 250px;
   width: 100%;
 }
+@media screen and (max-width: 767px) {
+  main .service_list .service_list_wrapper .service_content .service_content_img img {
+    height: 150px;
+  }
+}
 main .service_list .service_list_wrapper .service_content .service_content_txt {
   width: 55%;
+}
+@media screen and (max-width: 767px) {
+  main .service_list .service_list_wrapper .service_content .service_content_txt {
+    width: 100%;
+  }
 }
 main .service_list .service_list_wrapper .service_content .service_content_txt p {
   line-height: 1.8;
@@ -1797,6 +1856,7 @@ main .comment .comment_video {
 }
 @media screen and (max-width: 1000px) {
   main .comment {
+    margin-top: 50px;
     padding-bottom: 0;
   }
 }
