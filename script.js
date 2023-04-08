@@ -188,10 +188,16 @@ for (let i = 0; i < linkElem.length; i++) {
 if ('ontouchstart' in document.documentElement) {
   for (var sheetI = document.styleSheets.length - 1; sheetI >= 0; sheetI--) {
     var sheet = document.styleSheets[sheetI];
-    if (sheet.cssRules) {
-      for (var ruleI = sheet.cssRules.length - 1; ruleI >= 0; ruleI--) {
-        var rule = sheet.cssRules[ruleI];
-        
+    var cssRules;
+    try {
+      cssRules = sheet.cssRules;
+    } catch (e) {
+      continue;
+    }
+    if (cssRules) {
+      for (var ruleI = cssRules.length - 1; ruleI >= 0; ruleI--) {
+        var rule = cssRules[ruleI];
+
         if (rule.selectorText) {
           rule.selectorText = rule.selectorText.replace(':hover', ':active');
         }
@@ -199,6 +205,5 @@ if ('ontouchstart' in document.documentElement) {
     }
   }
 }
-
 
 
