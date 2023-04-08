@@ -1449,11 +1449,11 @@ main {
               width: 100%;
             }
             p {
-                line-height: 1.8;
-                font-size: 1.6rem;
-                @include mq($xs) {
-                  font-size: 1.4rem;
-                }
+              line-height: 1.8;
+              font-size: 1.6rem;
+              @include mq($xs) {
+                font-size: 1.4rem;
+              }
             }
           }
         } //service_content
