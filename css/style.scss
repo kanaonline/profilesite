@@ -1379,26 +1379,25 @@ main {
   }
   .service_list {
     width: 100%;
-    height: 700px;
+    height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: -webkit-Ssticky;
     position: sticky;
     font-family: 'Noto Serif JP', serif;
-    top: 15%;
+    top: 5%;
     @include mq($lg) {
-      // top: 10%;
+      top: -7%;
     }
     @include mq($md) {
-      top: 10%;
+      top: 0;
     }
     @include mq($sm) {
-      top: 10%;
-      height: 700px;
+      top: 5%;
     }
     @include mq($xs) {
-      top: 0;
+      top: -8%;
     }
     .service_list_wrapper {
       height: 450px;
@@ -1531,7 +1530,7 @@ main {
 
   ***************************************************/
   .contact {
-    margin-top: $margin-top + 100px;
+    margin-top: $margin-top;
     margin-bottom: $margin-bottom;
     .contact_t {
       opacity: 0;

@@ -176,6 +176,24 @@ for (let i = 0; i < linkElem.length; i++) {
 };
 
 
+/**************************************************
+ * 
+ * service titleの表示・非表示
+ * 
+***************************************************/
+const service_t = document.getElementById('service_t');
+window.addEventListener('scroll', function() {
+  const element = document.getElementById('service_list_three');
+  const elementPosition = element.getBoundingClientRect();
+
+  if (elementPosition.top <= 0) {
+    service_t.style.display = 'none';
+  }else {
+    service_t.style.display = 'block';
+  }
+});
+
+
 
 /********************************************************
 
