@@ -134,7 +134,7 @@ img {
         width: 50px;
       }
       @include mq($xs) {
-        left: 130px;
+        display: none;
       }
     }
     &.contact_t::after {
@@ -1373,23 +1373,32 @@ main {
     @include mq($md) {
       width: 80%;
     }
+    @include mq($xs) {
+      position: static;
+    }
   }
   .service_list {
     width: 100%;
-    height: 900px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: -webkit-Ssticky;
     position: sticky;
     font-family: 'Noto Serif JP', serif;
-    top: 5%;
+    top: 15%;
     @include mq($lg) {
-      top: -10%;
+      // top: 10%;
+    }
+    @include mq($md) {
+      top: 10%;
+    }
+    @include mq($sm) {
+      top: 10%;
+      height: 700px;
     }
     @include mq($xs) {
-      position: static;
-      height: 700px;
+      top: 0;
     }
     .service_list_wrapper {
       height: 450px;
@@ -1397,7 +1406,10 @@ main {
       background-color: rgb(249, 234, 236);
       box-shadow: 9px 13px 20px -2px rgba(0, 0, 0, 0.41);
       @include mq($sm) {
-        height: 640px;
+        height: 600px;
+      }
+      @include mq($xs) {
+        height: 530px;
       }
       h2 {
           text-align: center;
@@ -1411,7 +1423,7 @@ main {
             }
           }
           @include mq($sm) {
-            font-size: 2.4  rem;
+            font-size: 2.4rem;
             padding: 20px 10px 10px;
           } 
       }
@@ -1421,6 +1433,9 @@ main {
         align-items: center;
         gap: 30px;
         padding: 20px;
+        @include mq($xs) {
+          gap: 0;
+        }
         @include mq($sm) {
           display: flex;
           flex-direction: column;
@@ -1441,6 +1456,9 @@ main {
             @include mq($sm) {
               height: 150px;
             }
+            @include mq($xs) {
+              display: none;
+            }
             }
           }
           .service_content_txt {
@@ -1449,11 +1467,11 @@ main {
               width: 100%;
             }
             p {
-                line-height: 1.8;
-                font-size: 1.6rem;
-                @include mq($xs) {
-                  font-size: 1.4rem;
-                }
+              line-height: 1.8;
+              font-size: 1.6rem;
+              @include mq($xs) {
+                font-size: 1.4rem;
+              }
             }
           }
         } //service_content
@@ -1477,6 +1495,9 @@ main {
           font-weight: bold;
           padding-left: 30px;
           margin-top: 20px;
+          @include mq($xs) {
+            font-size: 1.8rem;
+          }
           &::before {
           content: '';
           display: block;
@@ -1510,7 +1531,7 @@ main {
 
   ***************************************************/
   .contact {
-    margin-top: $margin-top;
+    margin-top: $margin-top + 100px;
     margin-bottom: $margin-bottom;
     .contact_t {
       opacity: 0;
